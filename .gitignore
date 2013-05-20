@@ -1,3 +1,5 @@
+*.sqlite
+
 *.py[cod]
 
 # C extensions

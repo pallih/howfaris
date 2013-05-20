@@ -61,9 +61,9 @@ def parse_place(id):
                 batch.append(data)
         scraperwiki.sqlite.save(['from','to','distance','info'], data=batch, table_name='distances')
 
-# places_to_do = scraperwiki.sqlite.select("id from places")
+#places_to_do = scraperwiki.sqlite.select("id from places")
 
-# for place in places_to_do:
+#for place in places_to_do:
 #     parse_place(place['id'])
 
 
