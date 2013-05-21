@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     {% block head %}
-    <title>MY_NEW_APP{% block title %}{% endblock %}</title>
+    <title>How far is?{% block title %}{% endblock %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="keywords" content="">
@@ -20,7 +20,8 @@
 
     <link rel="shortcut icon" href="{{ url_for('static', filename='ico/favicon.ico') }}">
 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="/static/js/bootstrap-typeahead.js"></script>
     {% endblock %}
   </head>
 
@@ -35,7 +36,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </a>
-              <a class="brand" href="#">How far is?</a>
+              <a class="brand" href="/">How far is?</a>
               <div class="nav-collapse">
                 <ul class="nav">
                 </ul>
@@ -60,7 +61,7 @@
 
         {% block footer %}
         <footer class="footer">
-            <p>&copy; MY_NEW_APP</p>
+            <p>&copy; How far is?</p>
         </footer>
         {% endblock %}
 
