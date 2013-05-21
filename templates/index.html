@@ -2,10 +2,38 @@
 {% block title %} - Home{% endblock %}
 {% block content %}
 
-{% for row in rows %}
-        <div>
-          <a href="/spurning/{{row[1]}}"button class="btn btn-info" id='submitBtn' name='submitBtn' value='{{ row[1] }}'><i class="icon-white icon-circle-arrow-right"></i> {{ row[0] }}</a><br /><br />
-        </div>
-        {% endfor %}
+<div>
+<form class="well form-search" action="result" method="post">
+<input id="from_id" type="hidden" name="from_id">
+<input id="to_id" type="hidden" name="to_id">
+Brottfararstaður: <input class="from" type="text" name="from_place"/><br />
+</br>
+Áfangastaður: <input class="to" type="text" name="to_place"/><br />
+<button type="submit" class="btn">Sýna</button>
+</form>
+</div>
+<script type="text/javascript">
+     $('.from').typeahead({
+        source: [
+        {% for row in rows %}
+            { id: {{ row[1] }}, name: '{{ row[0] }}' },
+            {% endfor %}
+        ],
+        itemSelected: function(item, val, text){
+        $('#from_id').val(val);
+    }
+    });
+     $('.to').typeahead({
+        source: [
+        {% for row in rows %}
+            { id: {{ row[1] }}, name: '{{ row[0] }}' },
+            {% endfor %}
+        ],
+        itemSelected: function(item, val, text){
+        $('#to_id').val(val);
+    }
+    });
+
+</script>
 
 {% endblock %}

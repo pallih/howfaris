@@ -19,9 +19,10 @@
       <![endif]-->
 
     <link rel="shortcut icon" href="{{ url_for('static', filename='ico/favicon.ico') }}">
-
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap.js"></script>
     <script src="/static/js/bootstrap-typeahead.js"></script>
+
     {% endblock %}
   </head>
 
@@ -67,7 +68,8 @@
 
     </div>
     {% block js_footer %}
-      <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap.js"></script>
+
+
     {% endblock %}
   </body>
 </html>

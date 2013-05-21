@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %} - Home{% endblock %}
+{% block content %}
+
+<div>{% for row in rows %}
+Brottfararstaður: {{from_place}}<br />
+Áfangastaður: {{to_place}} <br /><br />
+
+Stysta vegalengd: {{row[1]}} km.<br />
+Þar af bundið slitlag í {{row[4]}} km. og möl í {{row[5]}} km.
+
+{% endfor %}
+<br />
+</div>
+
+{% endblock %}
