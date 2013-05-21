@@ -3,7 +3,7 @@
 {% block content %}
 
 <div>
-<form class="well form-search" action="result" method="post">
+<form class="well form-search" action="result" method="post" autocomplete="off">
 <input id="from_id" type="hidden" name="from_id">
 <input id="to_id" type="hidden" name="to_id">
 Brottfararstaður: <input class="from" type="text" name="from_place"/><br />
@@ -13,22 +13,17 @@ Brottfararstaður: <input class="from" type="text" name="from_place"/><br />
 </form>
 </div>
 <script type="text/javascript">
+var source = [
+        {% for row in rows %}{ id: {{ row[1] }}, name: '{{ row[0] }}' },{% endfor %}
+        ];
      $('.from').typeahead({
-        source: [
-        {% for row in rows %}
-            { id: {{ row[1] }}, name: '{{ row[0] }}' },
-            {% endfor %}
-        ],
+        source: source,
         itemSelected: function(item, val, text){
         $('#from_id').val(val);
     }
     });
      $('.to').typeahead({
-        source: [
-        {% for row in rows %}
-            { id: {{ row[1] }}, name: '{{ row[0] }}' },
-            {% endfor %}
-        ],
+        source: source,
         itemSelected: function(item, val, text){
         $('#to_id').val(val);
     }
