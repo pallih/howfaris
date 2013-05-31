@@ -27,26 +27,10 @@
   <body>
 
     {% block navbar %}
-    <div class="navbar navbar-fixed-top">
-        <div class="navbar-inner">
-            <div class="container">
-              <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </a>
-              <a class="brand" href="/">How far is?</a>
-              <div class="nav-collapse">
-                <ul class="nav">
-                </ul>
-                {% block navbar_right %}
-                <ul class="nav pull-right">
-
-                </ul>
-                {% endblock %}
-              </div><!--/.nav-collapse -->
-            </div>
-          </div>
+    <div class="container">
+        <div class="logo">
+            <a href="/"><img src="../static/assets/img/howfar_logo.png"></a>
+        </div>
     </div>
     {% endblock %}
 
