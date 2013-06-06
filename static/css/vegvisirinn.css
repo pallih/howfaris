@@ -1,0 +1,144 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+#full-screen-background-image {
+  z-index: -999;
+  min-height: 100%;
+  min-width: 1024px;
+  width: 100%;
+  height: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+body {
+  	font-family: "museo-sans",sans-serif;
+}
+
+.logo {
+	position: relative;
+	left: 50%;
+	width: 216px;
+	margin: 12px 0 35px -108px;
+}
+
+h5 {
+	font-weight: 500;
+	font-size: 16px;
+	color: #3C3C3C;
+	margin: 0 0 8px 12px;
+}
+
+.well {
+	padding: 0;
+}
+
+.form-search {
+	max-width: 260px;
+	padding: 19px 29px 0 29px;
+	margin-top: 60px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #EFEFEA;
+	opacity: .9;
+}
+
+input, textarea, .uneditable-input {
+	
+	
+}
+
+input[type="text"] {
+	font-family: "museo-sans",sans-serif;
+	font-weight: 300;
+  	font-size: 26px;
+  	height: 50px;
+ 	padding: 2px 0 0 14px;
+  	color: #333333;
+  	-webkit-border-radius: 1px;
+  	border: 1px solid #cccccc;
+	-webkit-transition: border linear 0.4s, box-shadow linear 0.2s;
+	   -moz-transition: border linear 0.4s, box-shadow linear 0.2s;
+	     -o-transition: border linear 0.4s, box-shadow linear 0.2s;
+	        transition: border linear 0.4s, box-shadow linear 0.2s;	
+}
+
+input[type="text"]:focus {
+	background-color: #ffffff;
+	border: 1px solid #aaaaaa;
+	-webkit-box-shadow: none;
+	   -moz-box-shadow: none;
+	        box-shadow: none;
+}
+
+input.from {
+	margin-bottom: 15px;
+}
+
+input.to {
+	margin-bottom: 10px;
+}
+
+.btn { 
+	position: relative;
+	left: 50%;
+	width: 170px;
+	margin: 20px 0 40px -85px;
+}
+
+.btn {
+	
+	background-color: #82BF22;
+	font-family: "museo-sans",sans-serif;
+	font-weight: 500;
+	font-size: 22px;
+	letter-spacing: .3;
+	color: #ffffff;
+	text-shadow: none;
+	border: 0;
+	-webkit-border-radius: 0;
+	padding: 17px 29px;
+	
+	background-image: none;
+	background-image: none;
+	background-image: none;
+	background-image: none;
+	background-image: none;
+	background-repeat: none;
+	
+	-webkit-box-shadow: none;
+	   -moz-box-shadow: none;
+	        box-shadow: none;
+}
+
+.btn:hover {
+	background-color: #8BC12D;
+	color: #ffffff;
+}
+
+@media all and (max-width: 480px) {
+	
+	body {
+		background-color: #EFEFEA;
+	}
+	.bg {
+		display:  none;
+		width: 100%;
+		margin: 0;
+		padding: 0;
+	}
+	
+	.form-search {
+		max-width: 80%;
+		padding: 19px 0 0 0;
+		margin: 0 auto;
+		background-color: #EFEFEA;
+		opacity: 1;
+	}
+}
+
