@@ -140,14 +140,14 @@ input.to {
 .distance { 
 	position: relative;
 	left: 50%;
-	width: 170px;
+	width: 140px;
 	margin: 20px 0 40px -85px;
 	padding: 15px 14px 0 14px;
 	height: 35px;
 	background-color: #82BF22;
 	text-align: right;
 	font-weight: 500;
-	font-size: 26px;
+	font-size: 30px;
 	color: #fff;
 }
 
