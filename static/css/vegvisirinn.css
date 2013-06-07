@@ -142,18 +142,20 @@ input.to {
 	left: 50%;
 	width: 140px;
 	margin: 14px 0 40px -85px;
-	padding: 18px 14px 0 14px;
+	padding: 20px 14px 0 14px;
 	height: 40px;
 	background-color: #50c4e5;
 	text-align: right;
 	font-weight: 500;
-	font-size: 32px;
+	font-size: 34px;
+	letter-spacing: 2px;
 	color: #fff;
 }
 
 .distance span {
 	font-size: 16px;
 	margin-left: 7px;
+	letter-spacing: 0;
 }
 
 @media all and (max-width: 480px) {
