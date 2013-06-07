@@ -36,11 +36,11 @@ h5 {
 
 .well {
 	padding: 0;
-	border: 0;
+	border: none;
 	border-radius: 2px;
 	-webkit-border-radius: 2px;
 	-moz-border-radius: 2px;
-	box-shadow: 0;
+	box-shadow: none;
 	-webkit-box-shadow: 0;
 	-moz-box-shadow: 0;
 }
