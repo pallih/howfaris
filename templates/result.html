@@ -17,23 +17,28 @@
 
 				<div class="logo"><img src="../static/img/vegvisir_logo.png" alt="Vegvísir" /></div>
 
-				<h5>Brottfararstaður</h5> 
+				<!-- <h5>Brottfararstaður</h5> --> 
 				<div class="location">{{from_place}}</div><br />
 				
-				<h5>Áfangastaður</h5> 
+				<!-- <h5>Áfangastaður</h5> -->
 				<div class="location">{{to_place}}</div> <br />
 
 				<!-- Stysta vegalengd --> 
 				<div class="distance">{{row[1]}}<span>km<span></div><br />
 
-				<h5>Vegir</h5> <br /> 
-				<p>Þar af bundið slitlag í {{row[4]}} km. <br />
-				og möl í {{row[5]}} km.<p>
-				
-				<h5>Veglýsing</h5> <br /> 
-				<div class="roads">{{row[0]}}</div><br />
+				<div class="roads">
+					<h5>Vegir</h5> <br /> 
+					<p>Þar af bundið slitlag í {{row[4]}} km. <br />
+					og möl í {{row[5]}} km.<p>
+				</div>
 
-				Nánari veglýsing er á <a href="{{row[7]}}">vef Vegagerðarinnar</a>.<br /><br />
+				<div class="roads">
+					<h5 class="roads">Veglýsing</h5> <br /> 
+					<div class="roads">{{row[0]}}</div><br />
+				</div>
+
+
+				Nánari veglýsing er á <a href="{{row[7]}}">vef Vegagerðarinnar</a>.<br />
 
 				<!--
 				<h5>Aðrar leiðir í boði eru:</h5> <br /><br />

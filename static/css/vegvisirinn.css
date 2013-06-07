@@ -158,6 +158,10 @@ input.to {
 	letter-spacing: 0;
 }
 
+.roads {
+	border-top: 1 solid #ccc;
+}
+
 @media all and (max-width: 480px) {
 	
 	body {
