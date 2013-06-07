@@ -128,6 +128,14 @@ input.to {
 	color: #ffffff;
 }
 
+.location {
+	background-color: #CCC;
+	padding: 2px 0 0 14px;
+	height: 50px;
+	font-size: 26px;
+	color: #fff;
+}
+
 @media all and (max-width: 480px) {
 	
 	body {
