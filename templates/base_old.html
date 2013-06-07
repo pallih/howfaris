@@ -10,6 +10,7 @@
     <meta charset="utf-8">
     <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
     <link href="../static/css/vegvisirinn.css" rel="stylesheet">
+    <style> body { padding-top: 60px; } </style>
 
     <!-- SUPPORT FOR IE6-8 OF HTML5 ELEMENTS -->
     <!--[if lt IE 9]>
@@ -26,11 +27,25 @@
 
   <body>
 
+    {% block navbar %}
+    <div class="container">
+        
+    </div>
+    {% endblock %}
+
     <div class="container page">
         <div class="content">
           {% block content %}
           {% endblock %}
         </div>
+
+        <hr>
+
+        {% block footer %}
+        <footer class="footer">
+            <p>&copy; How far is?</p>
+        </footer>
+        {% endblock %}
 
     </div>
     {% block js_footer %}
