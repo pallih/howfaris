@@ -3,31 +3,54 @@
 {% block content %}
 
 
-<div>{% for row in rows %}
-    {% if row[6] %}
-Brottfararstaður: {{from_place}}<br />
-Áfangastaður: {{to_place}} <br />
-Veglýsing: {{row[0]}}<br /><br />
+<div class="bg"><img alt="full screen background image" src="../static/img/road_02.jpg" id="full-screen-background-image" /> </div>
+        
+<div class="container">
+    
+    <div class="row-fluid"> 
+        <div class="span4 offset4">
 
-Stysta vegalengd: {{row[1]}} km.<br />
-Þar af bundið slitlag í {{row[4]}} km. og möl í {{row[5]}} km.<br /><br />
-Nánari veglýsing er <a href="{{row[7]}}">hér á vef Vegagerðarinnar</a>.<br /><br />
+        	<div class="well .form-results"></div>
 
-Aðrar leiðir í boði eru: <br /><br />
+				<div>{% for row in rows %}
+				    {% if row[6] %}
 
-{% else %}
+				<div class="logo"><img src="../static/img/vegvisir_logo.png" alt="Vegvísir" /></div>
+
+				<h5>Brottfararstaður</h5> 
+				<div class="location">{{from_place}}</div><br />
+				
+				<h5>Áfangastaður</h5> 
+				<div class="location">{{to_place}}</div> <br />
+
+				<!-- Stysta vegalengd --> 
+				<div class="distance">{{row[1]}}><span>km.<span></div><br />
+
+				<p>Þar af bundið slitlag í {{row[4]}} km. og möl í {{row[5]}} km.<p><br /><br />
+				
+				<h5>Veglýsing</h5> <br /> 
+				<div class="roads">{{row[0]}}</div><br />
+
+				Nánari veglýsing er á <a href="{{row[7]}}">vef Vegagerðarinnar</a>.<br /><br />
+
+				<h5>Aðrar leiðir í boði eru:</h5> <br /><br />
+
+				{% else %}
+
+				{{row[0]}}, {{row[1]}} km. (bundið slitlag {{row[4]}} km., möl {{row[5]}} km. - <a href="{{row[7]}}">lýsing</a>)<br />
+
+				{% endif %}
+
+				{% endfor %}
+
+				</div>
+
+				{% endblock %}
 
 
-{{row[0]}}, {{row[1]}} km. (bundið slitlag {{row[4]}} km., möl {{row[5]}} km. - <a href="{{row[7]}}">lýsing</a>)<br />
 
-{% endif %}
-
-{% endfor %}
-
-
-
-
-
+			</div>
+        </div>        
+    </div>
+    
 </div>
-
-{% endblock %}
