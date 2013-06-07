@@ -10,7 +10,7 @@
     <div class="row-fluid"> 
         <div class="span4 offset4">
 
-        	<div class="well .form-results">
+        	<form class="well .form-results">
 
 				<div>{% for row in rows %}
 				    {% if row[6] %}
@@ -24,7 +24,7 @@
 				<div class="location">{{to_place}}</div> <br />
 
 				<!-- Stysta vegalengd --> 
-				<div class="distance">{{row[1]}}><span>km.<span></div><br />
+				<div class="distance">{{row[1]}}<span>km.<span></div><br />
 
 				<p>Þar af bundið slitlag í {{row[4]}} km. og möl í {{row[5]}} km.<p><br /><br />
 				
@@ -49,7 +49,7 @@
 
 
 
-			</div>
+			</form>
         </div>        
     </div>
     
