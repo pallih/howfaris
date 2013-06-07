@@ -10,7 +10,7 @@
     <div class="row-fluid"> 
         <div class="span4 offset4">
 
-        	<form class="well .form-results">
+        	<div class="well form-results">
 
 				<div>{% for row in rows %}
 				    {% if row[6] %}
@@ -26,13 +26,14 @@
 				<!-- Stysta vegalengd --> 
 				<div class="distance">{{row[1]}}<span>km.<span></div><br />
 
-				<p>Þar af bundið slitlag í {{row[4]}} km. og möl í {{row[5]}} km.<p><br /><br />
+				<p>Þar af bundið slitlag í {{row[4]}} km. og möl í {{row[5]}} km.<p><
 				
 				<h5>Veglýsing</h5> <br /> 
 				<div class="roads">{{row[0]}}</div><br />
 
 				Nánari veglýsing er á <a href="{{row[7]}}">vef Vegagerðarinnar</a>.<br /><br />
 
+				<!--
 				<h5>Aðrar leiðir í boði eru:</h5> <br /><br />
 
 				{% else %}
@@ -46,10 +47,10 @@
 				</div>
 
 				{% endblock %}
+				-->
 
 
-
-			</form>
+			</div>
         </div>        
     </div>
     
