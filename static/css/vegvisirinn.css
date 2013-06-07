@@ -142,10 +142,17 @@ input.to {
 	left: 50%;
 	width: 170px;
 	margin: 20px 0 40px -85px;
+	padding: 15px 14px 0 14px;
+	height: 35px;
 	background-color: #82BF22;
+	text-align: right;
 	font-weight: 500;
 	font-size: 26px;
 	color: #fff;
+}
+
+.distance span {
+	font-size: 16px;
 }
 
 @media all and (max-width: 480px) {
