@@ -47,7 +47,7 @@ h5 {
 
 .form-search, .form-results {
 	max-width: 260px;
-	padding: 19px 29px 0 29px;
+	padding: 19px 29px 20px 29px;
 	margin-top: 60px;
 	margin-left: auto;
 	margin-right: auto;
@@ -141,7 +141,7 @@ input.to {
 	position: relative;
 	left: 50%;
 	width: 140px;
-	margin: 14px 0 25px -85px;
+	margin: 14px 0 14px -85px;
 	padding: 20px 14px 0 14px;
 	height: 40px;
 	background-color: #50c4e5;
