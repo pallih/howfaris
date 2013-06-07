@@ -163,8 +163,11 @@ input.to {
 	margin-bottom: 20px;
 }
 
-.roads>h5 {
+.roads>h6 {
 	margin-bottom: 3px;
+	font-weight: 500;
+	font-size: 16px;
+	color: #3C3C3C;
 }
 
 @media all and (max-width: 480px) {
