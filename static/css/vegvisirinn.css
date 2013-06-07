@@ -141,14 +141,14 @@ input.to {
 	position: relative;
 	left: 50%;
 	width: 140px;
-	margin: 14px 0 40px -85px;
+	margin: 14px 0 25px -85px;
 	padding: 20px 14px 0 14px;
 	height: 40px;
 	background-color: #50c4e5;
 	text-align: right;
 	font-weight: 500;
 	font-size: 34px;
-	letter-spacing: 2px;
+	letter-spacing: 3px;
 	color: #fff;
 }
 
@@ -159,7 +159,7 @@ input.to {
 }
 
 .roads {
-	border-top: 1 solid #ccc;
+	border-top: 1px solid #ccc;
 }
 
 @media all and (max-width: 480px) {
