@@ -159,7 +159,11 @@ input.to {
 }
 
 .roads {
-	border-top: 1px solid #ccc;
+	border-top: 1px solid #aaa;
+	margin-bottom: 20px;
+}
+.roads h5 {
+	margin-bottom: 3px;
 }
 
 @media all and (max-width: 480px) {
