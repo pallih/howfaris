@@ -139,7 +139,7 @@ input.to {
 
 .arrow {
 	text-align: center;
-	margin-top: 5px;
+	margin-top: 3px;
 	margin-left: auto;
 	margin-right: auto;
 	margin-bottom: 5px;
@@ -150,7 +150,7 @@ input.to {
 	position: relative;
 	left: 50%;
 	width: 140px;
-	margin: 14px 0 14px -85px;
+	margin: 26px 0 34px -85px;
 	padding: 20px 14px 0 14px;
 	height: 40px;
 	background-color: #50c4e5;
@@ -181,6 +181,10 @@ input.to {
 
 .roads p {
 	line-height: 19px;
+}
+
+.vegagerdin {
+	margin-top: 5px;
 }
 
 @media all and (max-width: 480px) {
