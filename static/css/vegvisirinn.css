@@ -135,6 +135,7 @@ input.to {
 	font-weight: 300;
 	font-size: 26px;
 	color: #333;
+	overflow: hidden;
 }
 
 .distance { 
