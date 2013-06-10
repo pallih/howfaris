@@ -5,16 +5,29 @@ html, body {
   margin: 0;
 }
 
-#full-screen-background-image {
+img.bg {
   z-index: -999;
   min-height: 100%;
-  min-width: 100%;
+  min-width: 1024%;
   width: 100%;
   height: auto;
   position: fixed;
   top: 0;
   left: 0;
 }
+
+/**
+#full-screen-background-image {
+  z-index: -999;
+  min-height: 100%;
+  min-width: 1024%;
+  width: 100%;
+  height: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+**/
 
 body {
   	font-family: "museo-sans",sans-serif;
@@ -193,6 +206,14 @@ input.to {
 	font-weight: 300;
 	font-style: italic;
 	text-align: center;
+}
+
+
+@media screen and (max-width: 1024px) { /* Specific to this particular image */
+  img.bg {
+    left: 50%;
+    margin-left: -512px;   /* 50% */
+  }
 }
 
 
