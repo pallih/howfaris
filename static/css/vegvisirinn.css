@@ -138,6 +138,7 @@ input.to {
 }
 
 .distance { 
+	font-family: "museo-sans-rounded",sans-serif;
 	position: relative;
 	left: 50%;
 	width: 140px;
@@ -145,7 +146,6 @@ input.to {
 	padding: 20px 14px 0 14px;
 	height: 40px;
 	background-color: #50c4e5;
-	font-family: "museo-sans-rounded",sans-serif;
 	text-align: right;
 	font-weight: 900;
 	font-size: 34px;
@@ -167,7 +167,7 @@ input.to {
 .roads>h6 {
 	margin-bottom: 3px;
 	font-weight: 500;
-	font-size: 16px;
+	font-size: 14px;
 	color: #3C3C3C;
 }
 
