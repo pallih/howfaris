@@ -184,7 +184,14 @@ input.to {
 }
 
 .vegagerdin {
-	margin-top: 5px;
+	padding-top: 10px;
+}
+
+.bonvoyage {
+	margin-top: 20px;
+	font-size: 20px;
+	font-weight: 500;
+	font-style: italic;
 }
 
 @media all and (max-width: 480px) {
