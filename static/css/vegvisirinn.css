@@ -130,12 +130,11 @@ input.to {
 
 .location {
 	background-color: #c9c9c3;
-	padding: 15px 0 0 14px;
-	height: 35px;
+	padding: 13px 0 13px 14px;
 	font-weight: 300;
 	font-size: 26px;
+	line-height: 29px;
 	color: #333;
-	overflow: hidden;
 }
 
 .distance { 
