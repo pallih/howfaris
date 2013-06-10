@@ -145,8 +145,9 @@ input.to {
 	padding: 20px 14px 0 14px;
 	height: 40px;
 	background-color: #50c4e5;
+	font-family: "museo-sans-rounded",sans-serif;
 	text-align: right;
-	font-weight: 500;
+	font-weight: 900;
 	font-size: 34px;
 	letter-spacing: 3px;
 	color: #fff;
