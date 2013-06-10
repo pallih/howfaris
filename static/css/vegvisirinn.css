@@ -165,6 +165,7 @@ input.to {
 }
 
 .roads>h6 {
+	margin-bottom: 0;
 	font-weight: 700;
 	font-size: 14px;
 	color: #3C3C3C;
