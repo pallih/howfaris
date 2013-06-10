@@ -165,10 +165,13 @@ input.to {
 }
 
 .roads>h6 {
-	margin-bottom: 3px;
 	font-weight: 700;
 	font-size: 14px;
 	color: #3C3C3C;
+}
+
+.roads p {
+	line-height: 19px;
 }
 
 @media all and (max-width: 480px) {
