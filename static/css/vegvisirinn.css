@@ -20,6 +20,13 @@ body {
   	font-family: "museo-sans",sans-serif;
 }
 
+p {
+	font-size: 14px;
+	font-weight: 500;
+	color: #333;
+	line-height: 19px;
+}
+
 .logo {
 	position: relative;
 	left: 50%;
@@ -180,8 +187,11 @@ input.to {
 }
 
 .roads p {
-	line-height: 19px;
 	margin: 0;
+}
+
+.roads p span {
+	font-weight: 700;
 }
 
 .vegagerdin {
