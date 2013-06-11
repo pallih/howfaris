@@ -3,31 +3,28 @@
 {% block content %}
 
 <div class="bg"><img alt="full screen background image" src="../static/img/road_01.jpg" id="full-screen-background-image" /> </div>
-        
+
     <div class="container">
-        
-        <div class="row-fluid"> 
+
+        <div class="row-fluid">
             <div class="span4 offset4">
                 <form class="well form-search" action="result" method="post" autocomplete="on">
                     <input id="from_id" type="hidden" name="from_id">
                     <input id="to_id" type="hidden" name="to_id">
-                    
+
                     <div class="logo"><a href="http://howfaris.gogn.in"><img src="../static/img/vegvisir_logo.svg" alt="Vegvísir"></a></div>
-                    
-                    <h5>Brottfararstaður</h5> 
-                    <input class="from input-block-level" type="text" name="from_place"/>
-                    
-                    <h5>Áfangastaður</h5> 
-                    <input class="to input-block-level" type="text" name="to_place"/>
-                    
+                    <!--<h5>Brottfararstaður</h5>-->
+                    <input class="from input-block-level" type="text" name="from_place" placeholder="Brottfararstaður" autocomplete="off"/>
+                    <!--<h5>Áfangastaður</h5>-->
+                    <input class="to input-block-level" type="text" name="to_place" placeholder="Áfangastaður" autocomplete="off"/>
                     <br/>
-                    
+
                     <button type="submit" class="btn">Af stað!</button>
-                    
+
                 </form>
-              </div>        
+              </div>
         </div>
-        
+
     </div>
 
 <script type="text/javascript">

@@ -17,17 +17,34 @@
 
 				<div class="logo"><a href="http://howfaris.gogn.in"><img src="../static/img/vegvisir_logo.svg" alt="Vegvísir" /></a></div>
 
+                <form class="well form-search" action="result" method="post" autocomplete="on">
+                    <input id="from_id" type="hidden" name="from_id">
+                    <input id="to_id" type="hidden" name="to_id">
+
 				<!-- Brottfararstaður -->
-				<div class="location">{{from_place}}</div>
+
+				<div class="location">
+
+                  <!--  {{from_place}}-->
+
+<input class="from input-block-level" type="text" name="from_place" placeholder="{{from_place}}" id="from" autocomplete="off"/>
+                </div>
 
 				<!-- Ör -->
 				<div class="arrow"><img src="../static/img/arrow.png"></div>
 
 				<!-- Áfangastaður -->
-				<div class="location">{{to_place}}</div>
+				<div class="location">
 
-				<!-- Stysta vegalengd -->
-				<div class="distance">{{row[1]}}<span>km<span></div>
+                 <!--   {{to_place}} -->
+                    <input class="to input-block-level" type="text" name="to_place" placeholder="{{to_place}}" id ="to" autocomplete="off"/>
+                </div>
+                <!-- Stysta vegalengd -->
+                <div class="distance">{{row[1]}}<span>km<span></div>
+                <div>
+                <button type="submit" class="btn">Af stað aftur!</button>
+				</div>
+            </form>
 
 				<div class="roads">
 					<h6>Vegir</h6>
@@ -49,6 +66,26 @@
 				<div class="bonvoyage">
 				– Góða ferð! –
 				</div>
+
+                <script type="text/javascript">
+var source = [
+        {% for place in places %}{ id: {{ place[1] }}, name: '{{ place[0] }}' },{% endfor %}
+        ];
+     $('.from').typeahead({
+        source: source,
+        itemSelected: function(item, val, text){
+        $('#from_id').val(val);
+    }
+    });
+     $('.to').typeahead({
+        source: source,
+        itemSelected: function(item, val, text){
+        $('#to_id').val(val);
+    }
+    });
+
+</script>
+
 				<!-- {% endif %}
 				{% endfor %}
 
