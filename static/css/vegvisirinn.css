@@ -155,11 +155,9 @@ input.to {
 .distance { 
 	font-family: "museo-sans-rounded",sans-serif;
 	position: relative;
-	left: 50%;
-	width: 140px;
-	margin: 26px 0 34px -85px;
-	padding: 20px 14px 0 14px;
-	height: 40px;
+	width: 55%;
+	margin: 26px auto 34px auto;
+	padding: 20px 14px 14px 14px;
 	background-color: #50c4e5;
 	text-align: right;
 	font-weight: 700;
