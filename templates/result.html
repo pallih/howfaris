@@ -17,18 +17,22 @@
 
 				<div class="logo"><a href="http://howfaris.gogn.in"><img src="../static/img/vegvisir_logo.svg" alt="Vegvísir" /></a></div>
 
-				<!-- Brottfararstaður -->
-				<div class="location">{{from_place}}</div>
+				<!-- Brottfararstaður 
+				<div class="location">{{from_place}}</div> -->
+				<input class="from input-block-level" type="text" name="from_place" placeholder="{{from_place}}"/>
 
 				<!-- Ör -->
 				<div class="arrow"><img src="../static/img/arrow.png"></div>
 
-				<!-- Áfangastaður -->
-				<div class="location">{{to_place}}</div>
+				<!-- Áfangastaður 
+				<div class="location">{{to_place}}</div> -->
+				<input class="to input-block-level" type="text" name="to_place" placeholder="{{to_place}}"/>
 
 				<!-- Stysta vegalengd -->
 				<div class="distance">{{row[1]}}<span>km<span></div>
 
+				<button type="submit" class="btn">Af stað!</button>
+				
 				<div class="roads">
 					<h6>Vegir</h6>
 					<p>Bundið slitlag í <span>{{row[4]}}</span> km. <br />
