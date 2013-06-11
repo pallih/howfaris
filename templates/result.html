@@ -31,14 +31,15 @@
 
 				<div class="roads">
 					<h6>Vegir</h6>
-					<p>{{row[1]}}</p>
 					<p>Bundið slitlag í {{row[4]}} km. <br />
 					og möl í {{row[5]}} km.<p>
 				</div>
 
 				<div class="roads">
 					<h6>Veglýsing</h6>
-					<p>{{row[0]}}</p>
+					{{% for vegur in vegir %}
+					<p>{{vegur}}</p>
+					{% endfor %}
 				</div>
 
 				<div class="roads vegagerdin">
@@ -48,7 +49,8 @@
 				<div class="bonvoyage">
 				– Góða ferð! –
 				</div>
-
+				{% endif %}
+				{% endfor %}
 				<!--
 				<h5>Aðrar leiðir í boði eru:</h5> <br /><br />
 
