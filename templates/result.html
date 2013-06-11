@@ -4,10 +4,10 @@
 
 
 <div class="bg"><img alt="full screen background image" src="../static/img/road_02.jpg" id="full-screen-background-image" /> </div>
-        
+
 <div class="container">
-    
-    <div class="row-fluid"> 
+
+    <div class="row-fluid">
         <div class="span4 offset4">
 
         	<div class="well form-results">
@@ -17,27 +17,29 @@
 
 				<div class="logo"><a href="http://howfaris.gogn.in"><img src="../static/img/vegvisir_logo.svg" alt="Vegvísir" /></a></div>
 
-				<!-- Brottfararstaður --> 
+				<!-- Brottfararstaður -->
 				<div class="location">{{from_place}}</div>
-				
+
 				<!-- Ör -->
 				<div class="arrow"><img src="../static/img/arrow.png"></div>
 
 				<!-- Áfangastaður -->
 				<div class="location">{{to_place}}</div>
 
-				<!-- Stysta vegalengd --> 
+				<!-- Stysta vegalengd -->
 				<div class="distance">{{row[1]}}<span>km<span></div>
 
 				<div class="roads">
-					<h6>Vegir</h6> 
+					<h6>Vegir</h6>
 					<p>Bundið slitlag í {{row[4]}} km. <br />
 					og möl í {{row[5]}} km.<p>
 				</div>
 
 				<div class="roads">
-					<h6>Veglýsing</h6> 
-					<p>{{row[0]}}</p>
+					<h6>Veglýsing</h6>
+					{% for vegur in vegir %}
+					<p>{{vegur}}</p>
+                    {% endfor %}
 				</div>
 
 				<div class="roads vegagerdin">
@@ -47,26 +49,14 @@
 				<div class="bonvoyage">
 				– Góða ferð! –
 				</div>
-
-				<!--
-				<h5>Aðrar leiðir í boði eru:</h5> <br /><br />
-
-				{% else %}
-
-				{{row[0]}}, {{row[1]}} km. (bundið slitlag {{row[4]}} km., möl {{row[5]}} km. - <a href="{{row[7]}}">lýsing</a>)<br />
-
-				{% endif %}
-
+				<!-- {% endif %}
 				{% endfor %}
 
-				</div>
-
 				{% endblock %}
-				-->
 
 
 			</div>
-        </div>        
+        </div>
     </div>
-    
+
 </div>
