@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% block title %} - Home{% endblock %}
+{% block content %}
+
+
+<div class="bg"><img alt="full screen background image" src="../static/img/road_02.jpg" id="full-screen-background-image" /> </div>
+
+<div class="container">
+
+    <div class="row-fluid">
+        <div class="span4 offset4">
+
+        	<div class="well form-results">
+
+				<div>{% for row in rows %}
+				    {% if row[6] %}
+
+				<div class="logo"><a href="http://howfaris.gogn.in"><img src="../static/img/vegvisir_logo.svg" alt="Vegvísir" /></a></div>
+
+				<!-- Brottfararstaður 
+				<div class="location">{{from_place}}</div> -->
+				<input class="from input-block-level" type="text" name="from_place" placeholder="{{from_place}}"/>
+
+				<!-- Ör -->
+				<div class="arrow"><img src="../static/img/arrow.png"></div>
+
+				<!-- Áfangastaður 
+				<div class="location">{{to_place}}</div> -->
+				<input class="to input-block-level" type="text" name="to_place" placeholder="{{to_place}}"/>
+
+				<!-- Stysta vegalengd -->
+				<div class="distance">{{row[1]}}<span>km<span></div>
+
+				<button type="submit" class="btn">Af stað!</button>
+				
+				<div class="roads">
+					<h6>Vegir</h6>
+					<p>Bundið slitlag í <span>{{row[4]}}</span> km. <br />
+					og möl í <span>{{row[5]}}</span> km.<p>
+				</div>
+
+				<div class="roads">
+					<h6>Veglýsing</h6>
+					{% for vegur in vegir %}
+					<p>{{vegur}}</p>
+                    {% endfor %}
+				</div>
+
+				<div class="roads vegagerdin">
+				Sjá nánar á vef <a href="{{row[7]}}">Vegagerðarinnar</a>.
+				</div>
+
+				<div class="bonvoyage">
+				– Góða ferð! –
+				</div>
+				<!-- {% endif %}
+				{% endfor %}
+
+				{% endblock %}
+
+
+			</div>
+        </div>
+    </div>
+
+</div>
