@@ -119,6 +119,7 @@ def scrape():
         return False
     for leg in todo_parse_road_descriptions:
         data = parse_road_descriptions(leg['url'],leg['from'],leg['to'],leg['distance'],leg['busl'],leg['mol'],leg['info'])
+        print 'done with:', leg['url']
     #print type(json.loads(data['roads']))
         scraperwiki.sqlite.save(['from','to','roads'], data=data, table_name='road_descriptions')
         return len(data)
