@@ -27,7 +27,7 @@
 
                   <!--  {{from_place}}-->
 
-<input class="from input-block-level" type="text" name="from_place" placeholder="{{from_place}}" id="from" autocomplete="off"/>
+<input class="from input-block-level" type="text" name="from_place" placeholder="{{from_place}}" id="from" autocomplete="off" value="{{from_place}}"/>
                 </div>
 
 				<!-- Ör -->
@@ -37,7 +37,7 @@
 				<div class="location">
 
                  <!--   {{to_place}} -->
-                    <input class="to input-block-level" type="text" name="to_place" placeholder="{{to_place}}" id ="to" autocomplete="off"/>
+                    <input class="to input-block-level" type="text" name="to_place" placeholder="{{to_place}}" id ="to" autocomplete="off" value="{{to_place}}"/>
                 </div>
                 <!-- Stysta vegalengd -->
                 <div class="distance">{{row[1]}}<span>km<span></div>
@@ -82,6 +82,11 @@ var source = [
         itemSelected: function(item, val, text){
         $('#to_id').val(val);
     }
+    });
+
+$('input:text').focus(
+    function(){
+        $(this).val('');
     });
 
 </script>
