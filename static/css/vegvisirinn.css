@@ -185,6 +185,17 @@ input.to {
 	font-size: 34px;
 	letter-spacing: 3px;
 	color: #fff;
+
+	background-image: none;
+	background-image: none;
+	background-image: none;
+	background-image: none;
+	background-image: none;
+	background-repeat: none;
+	
+	-webkit-box-shadow: none;
+	   -moz-box-shadow: none;
+	        box-shadow: none;
 }
 
 .takki {
