@@ -31,7 +31,7 @@ p {
 	position: relative;
 	left: 50%;
 	width: 216px;
-	margin: 12px 0 35px -108px;
+	margin: 14px 0 38px -108px;
 }
 
 h5 {
@@ -144,7 +144,7 @@ input.to {
 	position: relative;
 	left: 50%;
 	width: 170px;
-	margin: 20px 0 40px -85px;
+	margin: 26px 0 40px -85px;
 }
 
 .btn {
@@ -188,10 +188,10 @@ input.to {
 
 .arrow {
 	text-align: center;
-	margin-top: 6px;
+	margin-top: 8px;
 	margin-left: auto;
 	margin-right: auto;
-	margin-bottom: 6px;
+	margin-bottom: 8px;
 }
 
 .distance { 
