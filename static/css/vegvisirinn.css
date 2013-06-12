@@ -67,6 +67,10 @@ h5 {
 	
 }
 
+input {
+	height: none;
+}
+
 select,
 textarea,
 input[type="text"],
