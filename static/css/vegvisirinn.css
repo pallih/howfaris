@@ -176,7 +176,9 @@ input.to {
 .distance .btn {
 	float: left;
 	font-family: "museo-sans-rounded",sans-serif;
-	position: relative;
+	position: absolute;
+	top: 16px;
+	left: 15px;
 	margin: 0;
 	padding: 0;
 	background-color: #50c4e5;
