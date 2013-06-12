@@ -205,6 +205,10 @@ input.to {
 	color: #ffffff;
 }
 
+.distance .btn:hover {
+	background-color: #50c4e5;
+}
+
 .location {
 	background-color: #c9c9c3;
 	padding: 13px 14px 13px 14px;
