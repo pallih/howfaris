@@ -174,12 +174,11 @@ input.to {
 } 
 
 .distance .btn {
-	
+	float: left;
 	font-family: "museo-sans-rounded",sans-serif;
 	position: relative;
-	width: 55%;
-	margin: 26px auto 34px auto;
-	padding: 20px 14px 14px 14px;
+	margin: 0;
+	padding: 0;
 	background-color: #50c4e5;
 	text-align: right;
 	font-weight: 700;
