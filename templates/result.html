@@ -21,29 +21,28 @@
                     <input id="from_id" type="hidden" name="from_id">
                     <input id="to_id" type="hidden" name="to_id">
 
+
 				<!-- Brottfararstaður -->
 
-				<div class="location">
+				<input class="from input-block-level" type="text" name="from_place" placeholder="{{from_place}}" id="from" autocomplete="off" value="{{from_place}}"/>
 
-                  <!--  {{from_place}}-->
-
-<input class="from input-block-level" type="text" name="from_place" placeholder="{{from_place}}" id="from" autocomplete="off" value="{{from_place}}"/>
-                </div>
 
 				<!-- Ör -->
 				<div class="arrow"><img src="../static/img/arrow.png"></div>
 
-				<!-- Áfangastaður -->
-				<div class="location">
 
-                 <!--   {{to_place}} -->
-                    <input class="to input-block-level" type="text" name="to_place" placeholder="{{to_place}}" id ="to" autocomplete="off" value="{{to_place}}"/>
-                </div>
+				<!-- Áfangastaður -->
+	
+                <input class="to input-block-level" type="text" name="to_place" placeholder="{{to_place}}" id ="to" autocomplete="off" value="{{to_place}}"/>
+
+                
                 <!-- Stysta vegalengd -->
                 <div class="distance">{{row[1]}}<span>km<span></div>
                 <div>
+                
                 <button type="submit" class="btn">Af stað aftur!</button>
 				</div>
+            
             </form>
 
 				<div class="roads">
