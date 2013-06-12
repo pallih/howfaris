@@ -67,15 +67,37 @@ h5 {
 	
 }
 
-input[type="text"] {
+select,
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+.uneditable-input {
 	font-family: "museo-sans",sans-serif;
 	font-weight: 300;
   	font-size: 26px;
-  	height: none;
- 	padding: 9px 14px 9px 14px;
-  	color: #333333;
-  	-webkit-border-radius: 1px;
-  	border: 1px solid #cccccc;
+	display: inline-block;
+	height: none;
+	padding: 9px 14px 9px 14px;
+	margin-bottom: 0;
+	line-height: 28px;
+	color: #333333;
+	vertical-align: middle;
+	-webkit-border-radius: 1px;
+ 	  -moz-border-radius: 1px;
+        border-radius: 1px;
+    border: 1px solid #cccccc;
 	-webkit-transition: border linear 0.4s, box-shadow linear 0.2s;
 	   -moz-transition: border linear 0.4s, box-shadow linear 0.2s;
 	     -o-transition: border linear 0.4s, box-shadow linear 0.2s;
