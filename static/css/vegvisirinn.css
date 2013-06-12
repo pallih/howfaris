@@ -116,17 +116,22 @@ input[type="text"]:focus {
 	        box-shadow: none;
 }
 
-::-webkit-input-placeholder { /* WebKit browsers */
-    color:    #FFF;
+input:-moz-placeholder,
+textarea:-moz-placeholder {
+  color: #999999;
+  padding-top: 4px;
 }
-:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-    color:    #FFF;
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  color: #999999;
+  padding-top: 4px;
 }
-::-moz-placeholder { /* Mozilla Firefox 19+ */
-    color:    #FFF;
-}
-:-ms-input-placeholder { /* Internet Explorer 10+ */
-    color:    #FFF;
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: #999999;
+  padding-top: 4px;
 }
 
 input.from {
