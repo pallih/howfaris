@@ -177,8 +177,8 @@ input.to {
 	float: left;
 	font-family: "museo-sans-rounded",sans-serif;
 	position: absolute;
-	top: 16px;
-	left: 15px;
+	top: 19px;
+	left: 16px;
 	margin: 0;
 	padding: 0;
 	background-color: #50c4e5;
@@ -231,9 +231,9 @@ input.to {
 .distance { 
 	font-family: "museo-sans-rounded",sans-serif;
 	position: relative;
-	width: 55%;
+	width: 58%;
 	margin: 26px auto 34px auto;
-	padding: 20px 14px 14px 14px;
+	padding: 22px 14px 14px 14px;
 	background-color: #50c4e5;
 	text-align: right;
 	font-weight: 700;
