@@ -5,66 +5,65 @@
 
 <div class="bg"><img alt="full screen background image" src="../static/img/road_02.jpg" id="full-screen-background-image" /> </div>
 
-<div class="container">
+    <div class="container">
 
-    <div class="row-fluid">
-        <div class="span4 offset4">
+        <div class="row-fluid">
+            <div class="span4 offset4">
+            	<div class="well form-results">
 
-        	<div class="well form-results">
+    				<div>{% for row in rows %}
+    				    {% if row[6] %}
 
-				<div>{% for row in rows %}
-				    {% if row[6] %}
+    				<div class="logo"><a href="http://howfaris.gogn.in"><img src="../static/img/vegvisir_logo.svg" alt="Vegvísir" /></a></div>
 
-				<div class="logo"><a href="http://howfaris.gogn.in"><img src="../static/img/vegvisir_logo.svg" alt="Vegvísir" /></a></div>
-
-                <form class="well form-search" action="result" method="post" autocomplete="on">
-                    <input id="from_id" type="hidden" name="from_id">
-                    <input id="to_id" type="hidden" name="to_id">
-
-
-				<!-- Brottfararstaður -->
-
-				<input class="from input-block-level" type="text" name="from_place" placeholder="{{from_place}}" id="from" autocomplete="off" value="{{from_place}}"/>
+                    <form class="well form-search" action="result" method="post" autocomplete="on">
+                        <input id="from_id" type="hidden" name="from_id">
+                        <input id="to_id" type="hidden" name="to_id">
 
 
-				<!-- Ör -->
-				<div class="arrow"><img src="../static/img/arrow.png"></div>
+    				<!-- Brottfararstaður -->
+
+    				<input class="from input-block-level" type="text" name="from_place" placeholder="{{from_place}}" id="from" autocomplete="off" value="{{from_place}}"/>
 
 
-				<!-- Áfangastaður -->
-	
-                <input class="to input-block-level" type="text" name="to_place" placeholder="{{to_place}}" id ="to" autocomplete="off" value="{{to_place}}"/>
+    				<!-- Ör -->
+    				<div class="arrow"><img src="../static/img/arrow.png"></div>
 
+
+    				<!-- Áfangastaður -->
+    	
+                    <input class="to input-block-level" type="text" name="to_place" placeholder="{{to_place}}" id ="to" autocomplete="off" value="{{to_place}}"/>
+
+                    
+                    <!-- Stysta vegalengd -->
+                    <div class="distance">{{row[1]}}<span>km<span></div>
+                    <div>
+                    
+                    <button type="submit" class="btn">Af stað aftur!</button>
+    				</div>
                 
-                <!-- Stysta vegalengd -->
-                <div class="distance">{{row[1]}}<span>km<span></div>
-                <div>
-                
-                <button type="submit" class="btn">Af stað aftur!</button>
-				</div>
-            
-            </form>
+                </form>
 
-				<div class="roads">
-					<h6>Vegir</h6>
-					<p>Bundið slitlag í <span>{{row[4]}}</span> km. <br />
-					og möl í <span>{{row[5]}}</span> km.<p>
-				</div>
+    				<div class="roads">
+    					<h6>Vegir</h6>
+    					<p>Bundið slitlag í <span>{{row[4]}}</span> km. <br />
+    					og möl í <span>{{row[5]}}</span> km.<p>
+    				</div>
 
-				<div class="roads">
-					<h6>Veglýsing</h6>
-					{% for vegur in vegir %}
-					<p>{{vegur}}</p>
-                    {% endfor %}
-				</div>
+    				<div class="roads">
+    					<h6>Veglýsing</h6>
+    					{% for vegur in vegir %}
+    					<p>{{vegur}}</p>
+                        {% endfor %}
+    				</div>
 
-				<div class="roads vegagerdin">
-				Sjá nánar á vef <a href="{{row[7]}}">Vegagerðarinnar</a>.
-				</div>
+    				<div class="roads vegagerdin">
+    				Sjá nánar á vef <a href="{{row[7]}}">Vegagerðarinnar</a>.
+    				</div>
 
-				<div class="bonvoyage">
-				– Góða ferð! –
-				</div>
+    				<div class="bonvoyage">
+    				– Góða ferð! –
+    				</div>
 
                 <script type="text/javascript">
 var source = [
@@ -90,7 +89,7 @@ $('input:text').focus(
 
 </script>
 
-				<!-- {% endif %}
+				{% endif %}
 				{% endfor %}
 
 				{% endblock %}
