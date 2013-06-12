@@ -134,9 +134,7 @@ textarea::-webkit-input-placeholder {
   padding-top: 2px;
 }
 
-input.from {
-	margin-bottom: 15px;
-}
+
 
 input.to {
 	margin-bottom: 10px;
@@ -190,10 +188,10 @@ input.to {
 
 .arrow {
 	text-align: center;
-	margin-top: 3px;
+	margin-top: 6px;
 	margin-left: auto;
 	margin-right: auto;
-	margin-bottom: 5px;
+	margin-bottom: 6px;
 }
 
 .distance { 
