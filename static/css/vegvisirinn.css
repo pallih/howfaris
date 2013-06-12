@@ -62,8 +62,8 @@ h5 {
 	opacity: .9;
 }
 
-input, textarea, .uneditable-input {
-	
+.input-block-level {
+	height: none;
 	
 }
 
@@ -71,8 +71,8 @@ input[type="text"] {
 	font-family: "museo-sans",sans-serif;
 	font-weight: 300;
   	font-size: 26px;
-  	height: 50px;
- 	padding: 2px 0 0 14px;
+  	height: none;
+ 	padding: 9px 14px 9px 14px;
   	color: #333333;
   	-webkit-border-radius: 1px;
   	border: 1px solid #cccccc;
