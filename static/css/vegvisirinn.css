@@ -134,12 +134,6 @@ textarea::-webkit-input-placeholder {
   padding-top: 2px;
 }
 
-
-
-input.to {
-	margin-bottom: 10px;
-}
-
 .btn {
 	position: relative;
 	display: inherit;
