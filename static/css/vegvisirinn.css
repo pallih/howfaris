@@ -267,6 +267,9 @@ textarea::-webkit-input-placeholder {
 
 .roads p.vegnumer {
 	float: left;
+	margin-left: 3px;
+	font-weight: 500;
+	font-style: italic;
 }
 
 .roads p.vegalengd {
