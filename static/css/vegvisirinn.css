@@ -295,10 +295,14 @@ textarea::-webkit-input-placeholder {
 
 .ubbs {
 	margin-bottom: 13px;
+	color: #ee4141;
+	font-weight: 500;
+	font-style: italic;
 }
 
 .error {
 	text-align: center;
+	margin-bottom: 40px;
 }
 
 
