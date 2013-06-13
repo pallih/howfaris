@@ -250,7 +250,7 @@ textarea::-webkit-input-placeholder {
 	margin-bottom: 0;
 	font-weight: 700;
 	font-size: 14px;
-	color: #50c4e5;
+	color: #42b9db;
 }
 
 .roads p {
@@ -275,6 +275,11 @@ textarea::-webkit-input-placeholder {
 
 .vegagerdin {
 	padding-top: 10px;
+}
+
+.vegagerdin a {
+	color: #333333;
+	font-weight: 700;
 }
 
 .bonvoyage {
