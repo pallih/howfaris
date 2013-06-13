@@ -261,9 +261,16 @@ textarea::-webkit-input-placeholder {
 	font-weight: 700;
 }
 
+.roads p.vegur {
+	float: left;
+}
+
+.roads p.vegnumer {
+	float: left;
+}
+
 .roads p.vegalengd {
 	text-align: right;
-	font-weight: 700;
 }
 
 .vegagerdin {
