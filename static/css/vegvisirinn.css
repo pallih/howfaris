@@ -30,10 +30,12 @@ p {
 a {
 	color: #333333;
 	font-weight: 700;
+	text-decoration: none;
 }
 
 a:hover {
 	color: #555555;
+	text-decoration: none;
 }
 
 .logo {
@@ -289,10 +291,7 @@ textarea::-webkit-input-placeholder {
 	padding-top: 10px;
 }
 
-.vegagerdin,  a {
-	color: #333333;
-	font-weight: 700;
-}
+
 
 .bonvoyage, .ubbs {
 	margin: 24px 0 ;
