@@ -165,8 +165,8 @@ textarea::-webkit-input-placeholder {
 .distance .btn {
 	float: left;
 	position: relative;
-	width: 22px;
-	height: 22px;
+	width: 24px;
+	height: 24px;
 	font-family: "museo-sans-rounded",sans-serif;
 	position: absolute;
 	top: 19px;
