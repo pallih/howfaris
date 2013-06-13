@@ -142,6 +142,7 @@ input.to {
 
 .btn {
 	position: relative;
+	display: inherit;
 	background-color: #82BF22;
 	font-family: "museo-sans",sans-serif;
 	font-weight: 500;
@@ -150,6 +151,8 @@ input.to {
 	color: #ffffff;
 	text-shadow: none;
 	border: 0;
+	width: 57%;
+	margin: 0 auto;
 	-webkit-border-radius: 0;
 	padding: 17px 29px;
 	
