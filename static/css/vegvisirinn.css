@@ -293,6 +293,10 @@ textarea::-webkit-input-placeholder {
 	text-align: center;
 }
 
+.ubbs {
+	margin-bottom: 13px;
+}
+
 .error {
 	text-align: center;
 }
