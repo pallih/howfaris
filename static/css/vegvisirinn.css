@@ -140,16 +140,8 @@ input.to {
 	margin-bottom: 10px;
 }
 
-.btn { 
-	position: relative;
-	width: 22px;
-	height: 22px;
-	margin: 0;
-	padding: 0;
-}
-
 .btn {
-	
+	position: relative;
 	background-color: #82BF22;
 	font-family: "museo-sans",sans-serif;
 	font-weight: 500;
@@ -175,6 +167,9 @@ input.to {
 
 .distance .btn {
 	float: left;
+	position: relative;
+	width: 22px;
+	height: 22px;
 	font-family: "museo-sans-rounded",sans-serif;
 	position: absolute;
 	top: 19px;
