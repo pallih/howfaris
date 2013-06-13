@@ -285,11 +285,15 @@ textarea::-webkit-input-placeholder {
 	font-weight: 700;
 }
 
-.bonvoyage {
+.bonvoyage, .ubbs {
 	margin: 24px 0 ;
 	font-size: 18px;
 	font-weight: 300;
 	font-style: italic;
+	text-align: center;
+}
+
+.error {
 	text-align: center;
 }
 
