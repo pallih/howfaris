@@ -27,6 +27,11 @@ p {
 	line-height: 19px;
 }
 
+a {
+	color: #333333;
+	font-weight: 700;
+}
+
 .logo {
 	position: relative;
 	left: 50%;
@@ -278,11 +283,6 @@ textarea::-webkit-input-placeholder {
 
 .vegagerdin {
 	padding-top: 10px;
-}
-
-.vegagerdin a {
-	color: #333333;
-	font-weight: 700;
 }
 
 .bonvoyage, .ubbs {
