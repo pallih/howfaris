@@ -169,7 +169,7 @@ textarea::-webkit-input-placeholder {
 	height: auto;
 	font-family: "museo-sans-rounded",sans-serif;
 	position: absolute;
-	top: 19px;
+	top: 18px;
 	left: 16px;
 	margin: 0;
 	padding: 0;
@@ -291,6 +291,10 @@ textarea::-webkit-input-placeholder {
 	font-weight: 300;
 	font-style: italic;
 	text-align: center;
+}
+
+.bonvoyage {
+	color: #42b9db;
 }
 
 .ubbs {
