@@ -51,7 +51,13 @@ var source = [
 
      $('#from').on('focus', function() {
     document.body.scrollTop = $(this).offset().top;
+
 });
+
+     $('input:text').focus(
+    function(){
+        $(this).attr("placeholder","");
+    });
 
 </script>
 
