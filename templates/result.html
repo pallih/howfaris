@@ -39,7 +39,7 @@
                     <div class="distance"><button type="submit" class="btn"><img src="../static/img/reload.svg"></button>{{row[1]}}<span>km<span></div>
 
 
-                </form>
+                    </form>
 
     				<div class="roads">
     					<h6>Vegir</h6>
@@ -76,6 +76,15 @@
     				– Góða ferð! –
     				</div>
 
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+<a href="http://www.marinothorlacius.com" target="_blank"><div class="photo-credit">Photo by Marino Thorlacius</div></a>
+
+
                 <script type="text/javascript">
 var source = [
         {% for place in places %}{ id: {{ place[1] }}, name: '{{ place[0] }}' },{% endfor %}
@@ -111,10 +120,4 @@ $('#from').on('focus', function() {
 				{% endblock %}
 
 
-    			</div>
-            </div>
-        </div>
 
-    </div>
-
-<a href="http://www.marinothorlacius.com" target="_blank"><div class="photo-credit">Photo by Marino Thorlacius</div></a>
