@@ -332,6 +332,8 @@ textarea::-webkit-input-placeholder {
 	color: #222;
 	background-color: #EFEFEA;
 	opacity: .92;
+	border-top-left-radius: 2px;
+	border-top-right-radius: 2px;
 }
 
 
