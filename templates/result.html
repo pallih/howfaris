@@ -96,6 +96,7 @@ var source = [
 $('input:text').focus(
     function(){
         $(this).val('');
+        $(this).attr("placeholder","");
     });
 
 $('#from').on('focus', function() {
