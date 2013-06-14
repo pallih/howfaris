@@ -362,5 +362,8 @@ textarea::-webkit-input-placeholder {
 		background-color: #EFEFEA;
 		opacity: 1;
 	}
+	.photo-credit{
+		display: none;
+	}
 }
 
