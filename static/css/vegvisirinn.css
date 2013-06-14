@@ -330,7 +330,7 @@ textarea::-webkit-input-placeholder {
 	font-size: 10px;
 	font-weight: 300;
 	color: #222;
-	background-color: ##EFEFEA;
+	background-color: #EFEFEA;
 	opacity: .92;
 }
 
@@ -361,6 +361,9 @@ textarea::-webkit-input-placeholder {
 		margin: 0 auto;
 		background-color: #EFEFEA;
 		opacity: 1;
+	}
+	.photo-credit{
+		display: none;
 	}
 }
 
