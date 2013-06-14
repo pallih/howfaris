@@ -23,7 +23,7 @@
 
     				<!-- Brottfararstaður -->
 
-    				<input class="from input-block-level" type="text" name="from_place" placeholder="{{from_place}}" id="from" autocomplete="off" value="{{from_place}}"/>
+    				<input class="from input-block-level" type="text" name="from_place" placeholder="{{from_place}}" id="from" autocomplete="off" value="{{from_place}}" id="from"/>
 
 
     				<!-- Ör -->
@@ -58,7 +58,7 @@
     				<div class="roads">
     					<h6>Leiðarlýsing</h6>
                         {% for vegur in vegir %}
-    					<p class="vegur">{{vegur[0]|replace("null", "")}}
+    					<p class="vegur">{{vegur[0]|replace("null", "Ónefndur vegur")}}
                             {% if vegur[1] != '_'%}</p>
                         <p class="vegnumer">({{vegur[1]}})</p> <p class="vegalengd"><span>{{vegur[2]}}</span> km.</p>
                             {%else%}
@@ -97,6 +97,10 @@ $('input:text').focus(
     function(){
         $(this).val('');
     });
+
+$('#from').on('focus', function() {
+    document.body.scrollTop = $(this).offset().top;
+});
 
 </script>
 
