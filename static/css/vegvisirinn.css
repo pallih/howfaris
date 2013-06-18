@@ -334,7 +334,7 @@ textarea::-webkit-input-placeholder {
 }
 
 .photo-credit {
-	position: absolute;
+	position: fixed;
 	bottom: 0;
 	left: 30px;
 	padding: 3px 16px 2px;
