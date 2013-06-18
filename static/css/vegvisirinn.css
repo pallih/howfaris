@@ -12,7 +12,7 @@ html, body {
   min-width: none;
   height: auto;
   position: fixed;
-  top: 0;
+  bottom: 0;
   left: 0;
 }
 
