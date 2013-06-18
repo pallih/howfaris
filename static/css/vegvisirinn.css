@@ -8,6 +8,8 @@ html, body {
 #full-screen-background-image {
   z-index: -999;
   width: 100%;
+  max-width: none;
+  min-width: none;
   height: auto;
   position: fixed;
   top: 0;
