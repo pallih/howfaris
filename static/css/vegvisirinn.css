@@ -230,17 +230,17 @@ textarea::-webkit-input-placeholder {
 
 .arrow {
 	text-align: center;
-	margin-top: 8px;
+	margin-top: 5px;
 	margin-left: auto;
 	margin-right: auto;
-	margin-bottom: 8px;
+	margin-bottom: 5px;
 }
 
 .distance { 
 	font-family: "museo-sans-rounded",sans-serif;
 	position: relative;
 	width: 58%;
-	margin: 33px auto 30px auto;
+	margin: 29px auto 30px auto;
 	padding: 22px 14px 14px 14px;
 	background-color: #50c4e5;
 	text-align: right;
