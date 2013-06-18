@@ -321,8 +321,8 @@ textarea::-webkit-input-placeholder {
 }
 
 .share {
-	margin-top: 34px;
-	padding-top: 5px;
+	margin: 34px auto 15px auto;
+	padding-top: 8px;
 	border-top: 1px solid #aaa;
 }
 
