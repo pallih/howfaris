@@ -163,9 +163,8 @@ textarea::-webkit-input-placeholder {
 	border: 0;
 	width: 57%;
 	margin: 29px auto 40px auto;
-	-webkit-border-radius: 0;
 	padding: 17px 29px;
-	
+
 	background-image: none;
 	background-image: none;
 	background-image: none;
@@ -195,6 +194,9 @@ textarea::-webkit-input-placeholder {
 	font-size: 34px;
 	letter-spacing: 3px;
 	color: #fff;
+	-webkit-border-radius: 1px;
+	   -moz-border-radius: 1px;
+	        border-radius: 1px;
 
 	background-image: none;
 	background-image: none;
