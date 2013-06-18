@@ -7,8 +7,6 @@ html, body {
 
 #full-screen-background-image {
   z-index: -999;
-  min-height: 100%;
-  min-width: 1024px;
   width: 100%;
   height: auto;
   position: fixed;
@@ -18,7 +16,6 @@ html, body {
 
 body {
   	font-family: "museo-sans",sans-serif;
-  	background:url('../img/road_03.jpg') center center no-repeat;
 }
 
 p {
