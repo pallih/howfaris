@@ -296,8 +296,6 @@ textarea::-webkit-input-placeholder {
 	padding-top: 10px;
 }
 
-
-
 .bonvoyage, .ubbs {
 	margin: 24px 0 ;
 	font-size: 18px;
@@ -320,6 +318,11 @@ textarea::-webkit-input-placeholder {
 .error {
 	text-align: center;
 	margin-bottom: 40px;
+}
+
+.share {
+	padding-top: 5px;
+	border-top: 1px solid #aaa;
 }
 
 .photo-credit {
