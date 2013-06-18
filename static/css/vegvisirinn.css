@@ -18,6 +18,7 @@ html, body {
 
 body {
   	font-family: "museo-sans",sans-serif;
+  	background:url('../static/img/road_03.jpg') center center no-repeat;
 }
 
 p {
