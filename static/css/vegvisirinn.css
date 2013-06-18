@@ -348,6 +348,13 @@ textarea::-webkit-input-placeholder {
 	}
 }
 
+@media all and (max-aspect-ratio: 16/9) {
+	#full-screen-background-image {
+		height:100%;
+		width:auto;
+	}
+}
+
 @media all and (max-width: 480px) {
 	
 	body {
