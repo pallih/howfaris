@@ -19,7 +19,7 @@
 
         <div class="row-fluid">
             <div class="span4 offset4">
-                <form class="well form-search" action="result" method="post" autocomplete="on">
+                <form class="well form-search" action="/result" method="post" autocomplete="on" id ="route_select">
                     <input id="from_id" type="hidden" name="from_id">
                     <input id="to_id" type="hidden" name="to_id">
 
@@ -35,7 +35,7 @@
                     <input class="to input-block-level" type="text" name="to_place" placeholder="Áfangastaður" autocomplete="off" id="to"/>
 
                     <!-- Takki -->
-                    <button type="submit" class="btn">Af stað!</button>
+                    <button type="submit" class="btn" onclick="submitForm()">Af stað!</button>
 
                     <div class="share">
                         <div class="fb-like" data-href="http://www.vegvisir.is/" data-send="false" data-layout="button_count" data-width="120" data-show-faces="false" data-font="lucida grande"></div>
@@ -77,6 +77,15 @@ var source = [
     function(){
         $(this).attr("placeholder","");
     });
+
+     function submitForm(){
+        var safe_from = $(route_select.from).val().latinise();
+        var safe_to = $(route_select.to).val().latinise();
+        safe_from = safe_from.replace(/\s/g, "_");
+        safe_to = safe_to.replace(/\s/g, "_");
+    $("#route_select").attr("action",'/'+safe_from+'/'+safe_to);
+    $("#route_select").submit();
+}
 
 </script>
 

@@ -16,7 +16,7 @@
 
     				<div class="logo"><a href="http://www.vegvisir.is"><img src="../static/img/vegvisir_logo.svg" alt="Vegvísir" /></a></div>
 
-                    <form action="result" method="post" autocomplete="on">
+                    <form action="/" method="post" autocomplete="off" id ="route_select">
                         <input id="from_id" type="hidden" name="from_id" value="{{from_id}}">
                         <input id="to_id" type="hidden" name="to_id" value="{{to_id}}">
 
@@ -36,7 +36,7 @@
 
 
                     <!-- Stysta vegalengd -->
-                    <div class="distance"><button type="submit" class="btn"><img src="../static/img/reload.svg"></button>{{row[1]}}<span>km<span></div>
+                    <div class="distance"><button type="submit" class="btn" class="btn" onclick="submitForm()"><img src="../static/img/reload.svg"></button>{{row[1]}}<span>km<span></div>
 
 
                     </form>
@@ -117,6 +117,15 @@ $('input:text').focus(
 $('#from').on('focus', function() {
     document.body.scrollTop = $(this).offset().top;
 });
+
+     function submitForm(){
+        var safe_from = $(route_select.from).val().latinise();
+        var safe_to = $(route_select.to).val().latinise();
+        safe_from = safe_from.replace(/\s/g, "_");
+        safe_to = safe_to.replace(/\s/g, "_");
+    $("#route_select").attr("action",'/'+safe_from+'/'+safe_to);
+    $("#route_select").submit();
+}
 
 </script>
 
