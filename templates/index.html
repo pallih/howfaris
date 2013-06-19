@@ -84,10 +84,10 @@ var source = [
         if (safe_from == '' && safe_to == '') {
             var rand1 = source[Math.floor(Math.random() * source.length)];
             var rand2 = source[Math.floor(Math.random() * source.length)];
-            safe_from = rand1['name'];
+            safe_from = rand1['name'].latinise();
 $('input[name=from_place]').val(rand1['name']);
 $('input[name=from_id]').val(rand1['id']);
-    safe_to = rand2['name'];
+    safe_to = rand2['name'].latinise();
 $('input[name=to_place]').val(rand2['name']);
 $('input[name=to_id]').val(rand2['id']);
     }
