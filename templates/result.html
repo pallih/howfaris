@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %} - Home{% endblock %}
+{% block title %}: {{from_place}} - {{to_place}},{% for row in rows %} {{row[1]}} km.{%endfor%}{% endblock %}
 {% block content %}
 
 
@@ -75,10 +75,8 @@
     				</div>
 
                     <div class="share">
-                        <div class="fb-like" data-href="http://www.vegvisir.is/" data-send="false" data-layout="button_count" data-width="120" data-show-faces="false" data-font="lucida grande"></div>
+                        <div class="fb-like" data-href="http://www.vegvisir.is" data-send="true" data-layout="button_count" data-width="120" data-show-faces="false" data-font="lucida grande"></div>
                     </div>
-
-
 
                 </div>
 
