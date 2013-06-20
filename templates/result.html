@@ -3,7 +3,7 @@
 {% block content %}
 
 
-<div class="bg"><img alt="full screen background image" src="../static/img/road_04.jpg" id="full-screen-background-image" /> 
+<div class="bg"><img alt="full screen background image" src="../static/img/road_04.jpg" id="full-screen-background-image" />
 </div>
 
 <div class="pattern">
@@ -114,13 +114,21 @@ $('input:text').focus(
         $(this).attr("placeholder","");
     });
 
-$('#from').on('focus', function() {
-    document.body.scrollTop = $(this).offset().top;
-});
+
 
      function submitForm(){
         var safe_from = $(route_select.from).val().latinise();
         var safe_to = $(route_select.to).val().latinise();
+        if (safe_from == '' && safe_to == '') {
+            var rand1 = source[Math.floor(Math.random() * source.length)];
+            var rand2 = source[Math.floor(Math.random() * source.length)];
+            safe_from = rand1['name'].latinise();
+$('input[name=from_place]').val(rand1['name']);
+$('input[name=from_id]').val(rand1['id']);
+    safe_to = rand2['name'].latinise();
+$('input[name=to_place]').val(rand2['name']);
+$('input[name=to_id]').val(rand2['id']);
+    }
         safe_from = safe_from.replace(/\s/g, "_");
         safe_to = safe_to.replace(/\s/g, "_");
     $("#route_select").attr("action",'/'+safe_from+'/'+safe_to);
