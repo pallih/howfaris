@@ -3,82 +3,87 @@
 {% block content %}
 
 
-<div class="bg"><img alt="full screen background image" src="../static/img/road_04.jpg" id="full-screen-background-image" /> </div>
+<div class="bg"><img alt="full screen background image" src="../static/img/road_04.jpg" id="full-screen-background-image" /> 
+</div>
+
+<div class="pattern">
+</div>
 
     <div class="container">
 
-            	<div class="well form-results">
+    	<div class="well form-results">
 
-    				<div>{% for row in rows %}
-    				    {% if row[6] %}
+			<div>{% for row in rows %}
+			    {% if row[6] %}
 
-    				<div class="logo"><a href="http://www.vegvisir.is"><img src="../static/img/vegvisir_logo.svg" alt="Vegvísir" /></a></div>
+			<div class="logo"><a href="http://www.vegvisir.is"><img src="../static/img/vegvisir_logo.svg" alt="Vegvísir" /></a></div>
 
-                    <form action="/" method="post" autocomplete="off" id ="route_select">
-                        <input id="from_id" type="hidden" name="from_id" value="{{from_id}}">
-                        <input id="to_id" type="hidden" name="to_id" value="{{to_id}}">
-
-
-    				<!-- Brottfararstaður -->
-
-    				<input class="from input-block-level" type="text" name="from_place" placeholder="{{from_place}}" id="from" autocomplete="off" value="{{from_place}}" id="from"/>
+            <form action="/" method="post" autocomplete="off" id ="route_select">
+                <input id="from_id" type="hidden" name="from_id" value="{{from_id}}">
+                <input id="to_id" type="hidden" name="to_id" value="{{to_id}}">
 
 
-    				<!-- Ör -->
-    				<div class="arrow"><img src="../static/img/arrow.png"></div>
+			<!-- Brottfararstaður -->
+
+			<input class="from input-block-level" type="text" name="from_place" placeholder="{{from_place}}" id="from" autocomplete="off" value="{{from_place}}" id="from"/>
 
 
-    				<!-- Áfangastaður -->
-
-                    <input class="to input-block-level" type="text" name="to_place" placeholder="{{to_place}}" id ="to" autocomplete="off" value="{{to_place}}"/>
-
-
-                    <!-- Stysta vegalengd -->
-                    <div class="distance"><button type="submit" class="btn" class="btn" onclick="submitForm()"><img src="../static/img/reload.svg"></button>{{row[1]}}<span>km<span></div>
+			<!-- Ör -->
+			<div class="arrow"><img src="../static/img/arrow.png"></div>
 
 
-                    </form>
+			<!-- Áfangastaður -->
 
-    				<div class="roads">
-    					<h6>Vegir</h6>
+            <input class="to input-block-level" type="text" name="to_place" placeholder="{{to_place}}" id ="to" autocomplete="off" value="{{to_place}}"/>
 
-                        {% if row[5] == '0' %}
-    					<p>Bundið slitlag alla leið! <p/>
-                        {% elif row[4] == '0' %}
-                        <p>Möl alla leið! <p/>
-                        {%else%}
 
-                         <p>Bundið slitlag í <span>{{row[4]}}</span> km. og
-    					möl í <span>{{row[5]}}</span> km.<p>
-                        {% endif %}
-    				</div>
+            <!-- Stysta vegalengd -->
+            <div class="distance"><button type="submit" class="btn" class="btn" onclick="submitForm()"><img src="../static/img/reload.svg"></button>{{row[1]}}<span>km<span></div>
 
-    				<div class="roads">
-    					<h6>Leiðarlýsing</h6>
-                        {% for vegur in vegir %}
-    					<p class="vegur">{{vegur[0]|replace("null", "Ónefndur vegur")}}
-                            {% if vegur[1] != '_'%}</p>
-                        <p class="vegnumer">({{vegur[1]}})</p> <p class="vegalengd"><span>{{vegur[2]}}</span> km.</p>
-                            {%else%}
-                        </p>
-                        {%endif%}
-                        {%endfor%}
+            </form>
 
-    				</div>
+            <!-- Vegir -->
+			<div class="roads">
+				<h6>Vegir</h6>
 
-    				<div class="roads vegagerdin">
-    				Sjá nánar á vef <a href="{{row[7]}}" target="_blank">Vegagerðarinnar</a>.
-    				</div>
+                {% if row[5] == '0' %}
+				<p>Bundið slitlag alla leið! <p/>
+                {% elif row[4] == '0' %}
+                <p>Möl alla leið! <p/>
+                {%else%}
 
-    				<div class="bonvoyage">
-    				– Góða ferð! –
-    				</div>
+                 <p>Bundið slitlag í <span>{{row[4]}}</span> km. og
+				möl í <span>{{row[5]}}</span> km.<p>
+                {% endif %}
+			</div>
 
-                    <div class="share">
-                        <div class="fb-like" data-href="http://www.vegvisir.is" data-send="true" data-layout="button_count" data-width="120" data-show-faces="false" data-font="lucida grande"></div>
-                    </div>
+            <!-- Leiðarlýsing -->
+			<div class="roads">
+				<h6>Leiðarlýsing</h6>
+                {% for vegur in vegir %}
+				<p class="vegur">{{vegur[0]|replace("null", "Ónefndur vegur")}}
+                    {% if vegur[1] != '_'%}</p>
+                <p class="vegnumer">({{vegur[1]}})</p> <p class="vegalengd"><span>{{vegur[2]}}</span> km.</p>
+                    {%else%}
+                </p>
+                {%endif%}
+                {%endfor%}
 
-                </div>
+			</div>
+
+			<<div class="roads vegagerdin">
+			Sjá nánar á vef <a href="{{row[7]}}" target="_blank">Vegagerðarinnar</a>.
+			</div>
+
+			<div class="bonvoyage">
+			– Góða ferð! –
+			</div>
+
+            <div class="share">
+                <div class="fb-like" data-href="http://www.vegvisir.is" data-send="true" data-layout="button_count" data-width="120" data-show-faces="false" data-font="lucida grande"></div>
+            </div>
+
+        </div>
 
 
     </div>
