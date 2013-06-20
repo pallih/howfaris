@@ -13,35 +13,36 @@
 }(document, 'script', 'facebook-jssdk'));</script>
 
 
-<div class="bg"><img alt="full screen background image" src="../static/img/road_03.jpg" id="full-screen-background-image" /> </div>
+<div class="bg"><img alt="full screen background image" src="../static/img/road_03.jpg" id="full-screen-background-image" /> 
+</div>
+
+<div class="pattern"></div>
 
     <div class="container">
 
 
-                <form class="well form-search" action="/result" method="post" autocomplete="off" id ="route_select">
-                    <input id="from_id" type="hidden" name="from_id" >
-                    <input id="to_id" type="hidden" name="to_id" >
+        <form class="well form-search" action="/result" method="post" autocomplete="off" id ="route_select">
+            <input id="from_id" type="hidden" name="from_id" >
+            <input id="to_id" type="hidden" name="to_id" >
 
-                    <div class="logo"><a href="http://www.vegvisir.is"><img src="../static/img/vegvisir_logo.svg" alt="Vegvísir"></a></div>
+            <div class="logo"><a href="http://www.vegvisir.is"><img src="../static/img/vegvisir_logo.svg" alt="Vegvísir"></a></div>
 
-                    <!--<h5>Brottfararstaður</h5>-->
-                    <input class="from box input-block-level" type="text" name="from_place" placeholder="Brottfararstaður" autocomplete="off" id="from" />
+            <!--<h5>Brottfararstaður</h5>-->
+            <input class="from box input-block-level" type="text" name="from_place" placeholder="Brottfararstaður" autocomplete="off" id="from" />
 
-                    <!-- Ör -->
-                    <div class="arrow"><img src="../static/img/arrow.png"></div>
+            <!-- Ör -->
+            <div class="arrow"><img src="../static/img/arrow.png"></div>
 
-                    <!--<h5>Áfangastaður</h5>-->
-                    <input class="to input-block-level" type="text" name="to_place" placeholder="Áfangastaður" autocomplete="off" id="to" />
+            <!--<h5>Áfangastaður</h5>-->
+            <input class="to input-block-level" type="text" name="to_place" placeholder="Áfangastaður" autocomplete="off" id="to" />
 
-                    <!-- Takki -->
-                    <button type="submit" class="btn" onclick="submitForm()">Af stað!</button>
+            <!-- Takki -->
+            <button type="submit" class="btn" onclick="submitForm()">Af stað!</button>
 
-                    <div class="share">
-
-
-                        <div class="fb-like" data-href="http://www.vegvisir.is" data-send="true" data-layout="button_count" data-width="120" data-show-faces="false" data-font="lucida grande"></div>
-</div>
-                </form>
+            <div class="share">
+                <div class="fb-like" data-href="http://www.vegvisir.is" data-send="true" data-layout="button_count" data-width="120" data-show-faces="false" data-font="lucida grande"></div>
+            </div>
+        </form>
 
 
     </div>

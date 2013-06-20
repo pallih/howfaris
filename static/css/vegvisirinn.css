@@ -16,6 +16,13 @@ html, body {
   left: 0;
 }
 
+.pattern {
+	width: 100%;
+	height: 100%;
+	background-image:url('../img/pattern.png');
+	background-repeat:repeat-y;
+}
+
 body {
   	font-family: "museo-sans",sans-serif;
 }
