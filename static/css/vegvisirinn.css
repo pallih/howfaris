@@ -322,8 +322,9 @@ textarea::-webkit-input-placeholder {
 }
 
 .bonvoyage {
+	border-top: 1px solid #aaa;
+	padding-top: 24px;
 	color: #42b9db;
-	margin-bottom: 35px;
 }
 
 .ubbs {
