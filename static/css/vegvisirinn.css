@@ -385,6 +385,10 @@ textarea::-webkit-input-placeholder {
 		margin: 0;
 		padding: 0;
 	}
+
+	.pattern {
+		display: none;
+	}
 	
 	.form-search, .form-results {
 		max-width: 80%;
