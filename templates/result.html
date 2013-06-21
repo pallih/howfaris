@@ -3,7 +3,7 @@
 {% block content %}
 
 
-<div class="bg"><img alt="full screen background image" src="../static/img/road_04.jpg" id="full-screen-background-image" />
+<div class="bg"><img alt="full screen background image" src="../static/img/road_04.jpg" id="full-screen-background-image" /> 
 </div>
 
 <div class="pattern">
@@ -16,7 +16,7 @@
 			<div>{% for row in rows %}
 			    {% if row[6] %}
 
-			<div class="logo"><a href="http://www.vegvisir.is"><img src="../static/img/vegvisir_logo.svg" alt="Vegvísir" /></a></div>
+			<div class="logo"><a href="http://www.vegvisir.is"><img src="../static/img/vegvisir_logo.svg" data-name="logo" alt="Vegvísir logo" /></a></div>
 
             <form action="/" method="post" autocomplete="off" id ="route_select">
                 <input id="from_id" type="hidden" name="from_id" value="{{from_id}}">
@@ -38,7 +38,7 @@
 
 
             <!-- Stysta vegalengd -->
-            <div class="distance"><button type="submit" class="btn" class="btn" onclick="submitForm()"><img data-name="reload"></button>{{row[1]}}<span>km<span></div>
+            <div class="distance"><button type="submit" class="btn" class="btn" onclick="submitForm()"><img src="../static/img/reload.svg" data-name="reload" alt="reload"></button>{{row[1]}}<span>km<span></div>
 
             </form>
 
@@ -121,21 +121,13 @@ $('input:text').focus(
         $(this).attr("placeholder","");
     });
 
-
+$('#from').on('focus', function() {
+    document.body.scrollTop = $(this).offset().top;
+});
 
      function submitForm(){
         var safe_from = $(route_select.from).val().latinise();
         var safe_to = $(route_select.to).val().latinise();
-        if (safe_from == '' && safe_to == '') {
-            var rand1 = source[Math.floor(Math.random() * source.length)];
-            var rand2 = source[Math.floor(Math.random() * source.length)];
-            safe_from = rand1['name'].latinise();
-$('input[name=from_place]').val(rand1['name']);
-$('input[name=from_id]').val(rand1['id']);
-    safe_to = rand2['name'].latinise();
-$('input[name=to_place]').val(rand2['name']);
-$('input[name=to_id]').val(rand2['id']);
-    }
         safe_from = safe_from.replace(/\s/g, "_");
         safe_to = safe_to.replace(/\s/g, "_");
     $("#route_select").attr("action",'/'+safe_from+'/'+safe_to);
