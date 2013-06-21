@@ -38,7 +38,7 @@
 
 
             <!-- Stysta vegalengd -->
-            <div class="distance"><button type="submit" class="btn" class="btn" onclick="submitForm()"><img src="../static/img/reload.svg"></button>{{row[1]}}<span>km<span></div>
+            <div class="distance"><button type="submit" class="btn" class="btn" onclick="submitForm()"><img data-name="reload"></button>{{row[1]}}<span>km<span></div>
 
             </form>
 
@@ -91,7 +91,14 @@
 <a href="http://www.marinothorlacius.com" target="_blank"><div class="photo-credit">Photo by Marino Thorlacius</div></a>
 
 
-                <script type="text/javascript">
+<script src="svg-image-fallback.js"></script>
+<script>
+    $('.js-svgCheck').SVGImgFallback({
+            "location" : "../static/img/"
+    });
+</script>
+
+<script type="text/javascript">
 var source = [
         {% for place in places %}{ id: {{ place[1] }}, name: '{{ place[0] }}' },{% endfor %}
         ];
