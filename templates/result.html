@@ -3,7 +3,7 @@
 {% block content %}
 
 
-<div class="bg"><img alt="full screen background image" src="../static/img/road_04.jpg" id="full-screen-background-image" /> 
+<div class="bg"><img alt="full screen background image" src="../static/img/road_04.jpg" id="full-screen-background-image" />
 </div>
 
 <div class="pattern">
@@ -61,12 +61,16 @@
 			<div class="roads">
 				<h6>Leiðarlýsing</h6>
                 {% for vegur in vegir %}
-				<p class="vegur">{{vegur[0]|replace("null", "Ónefndur vegur")}}
-                    {% if vegur[1] != '_'%}</p>
-                <p class="vegnumer">({{vegur[1]}})</p> <p class="vegalengd"><span>{{vegur[2]}}</span> km.</p>
-                    {%else%}
-                </p>
+				<p class="vegur">{{vegur[0]|replace("null", "Ónefndur vegur")}}</p>
+                {% if vegur[1] == '_' %}
+                <p class="vegnumer"></p>
+                {%else%}
+                <p class="vegnumer">({{vegur[1]}})</p>
                 {%endif%}
+                <p class="vegalengd"><span>{{vegur[2]}}</span> km.</p>
+
+
+
                 {%endfor%}
 
 			</div>
