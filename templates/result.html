@@ -45,7 +45,6 @@
             <!-- Vegir -->
 			<div class="roads">
 				<h6>Vegir</h6>
-
                 {% if row[5] == '0' %}
 				<p>Bundið slitlag alla leið! <p/>
                 {% elif row[4] == '0' %}
@@ -73,7 +72,17 @@
 
                 {%endfor%}
 
+            <!-- Helstu kennileiti -->
 			</div>
+            <div class="roads">
+                <h6>Helstu kennileiti</h6>
+                {% if '*' in row[0] %}
+                <p>{{row[0]|replace("* Ath. farið um fjallvegi (opnir hluta sumars) milli staða. Ekki fært fólksbílum. ", "")}}</p>
+                <p style="margin-top:10px;">* Ath. farið um fjallvegi (opnir hluta sumars) milli staða. Ekki fært fólksbílum.</p>
+                {%else%}
+                <p>{{row[0]}}</p>
+                {%endif%}
+            </div>
 
 			<!-- <div class="roads vegagerdin">
 			Sjá nánar á vef <a href="{{row[7]}}" target="_blank">Vegagerðarinnar</a>.
