@@ -151,6 +151,13 @@ $('input[name=from_id]').val(rand1['id']);
 $('input[name=to_place]').val(rand2['name']);
 $('input[name=to_id]').val(rand2['id']);
     }
+
+    if (safe_to == '') {
+            var rand2 = source[Math.floor(Math.random() * source.length)];
+    safe_to = rand2['name'].latinise();
+$('input[name=to_place]').val(rand2['name']);
+$('input[name=to_id]').val(rand2['id']);
+    }
         safe_from = safe_from.replace(/\s/g, "_");
         safe_to = safe_to.replace(/\s/g, "_");
     $("#route_select").attr("action",'/'+safe_from+'/'+safe_to);
