@@ -60,6 +60,11 @@ a:hover {
 	margin: 14px 0 38px -108px;
 }
 
+.sprite {
+  background: url(../img/vegvisir_logo.png) no-repeat 0px 0px;
+  background: rgba(0,0,0,0) url(../img/vegvisir_logo.svg) no-repeat 0px 0px;
+}
+
 h5 {
 	font-weight: 500;
 	font-size: 16px;
@@ -414,9 +419,10 @@ textarea::-webkit-input-placeholder {
 		background-color: #EFEFEA;
 		opacity: 1;
 	}
-	.photo-credit{
+	.info {
 		display: none;
 	}
+
 }
 
 @media print { 
@@ -443,7 +449,7 @@ textarea::-webkit-input-placeholder {
 		background-color: #EFEFEA;
 		opacity: 1;
 	}
-	.photo-credit{
+	.info {
 		display: none;
 	}
 }	
