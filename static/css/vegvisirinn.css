@@ -61,12 +61,10 @@ a:hover {
 }
 
 .sprite {
-  	background: url(../img/vegvisir_logo.png) no-repeat 0px 0px;
-  	background: rgba(0,0,0,0) url(../img/vegvisir_logo.svg) no-repeat 0px 0px;
-  	width: 216px;
+  	background: url(../img/vegvisir_logo.png) no-repeat center center;
+  	background: rgba(0,0,0,0) url(../img/vegvisir_logo.svg) no-repeat center center;
 	height: 80px;
-	left: 50%;
-	margin: 14px 0 38px -108px;
+	margin: 14px 0 38px 0;
 }
 
 h5 {
