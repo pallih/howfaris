@@ -359,11 +359,17 @@ textarea::-webkit-input-placeholder {
 	border-top-right-radius: 2px;
 }
 
+.info i {
+	font-size: 11px;
+}
+
 .social {
 	display: inline-block;
+	margin-right: 5px;
 }
 
 .photo-credit {
+	display: inline-block;
 	font-size: 10px;
 	font-weight: 300;
 	color: #222;
