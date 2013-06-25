@@ -370,9 +370,6 @@ textarea::-webkit-input-placeholder {
 
 .photo-credit {
 	display: inline-block;
-}
-
-.photo-credit p {
 	font-size: 10px;
 	font-weight: 300;
 	color: #222;
