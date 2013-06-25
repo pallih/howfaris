@@ -54,13 +54,6 @@ a:hover {
 }
 
 .logo {
-	position: relative;
-	left: 50%;
-	width: 216px;
-	margin: 14px 0 38px -108px;
-}
-
-.sprite {
   	background: url(../img/vegvisir_logo.png) no-repeat center center;
   	background: rgba(0,0,0,0) url(../img/vegvisir_logo.svg) no-repeat center center;
 	height: 80px;
