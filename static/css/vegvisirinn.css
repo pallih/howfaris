@@ -420,9 +420,10 @@ textarea::-webkit-input-placeholder {
 }
 
 @media print { 
-	
+
 	body {
-		background-color: #EFEFEA;
+		background-color: #fff;
+		
 	}
 	.bg {
 		display:  none;
@@ -436,7 +437,7 @@ textarea::-webkit-input-placeholder {
 	}
 	
 	.form-search, .form-results {
-		max-width: 80%;
+		max-width: 50%;
 		padding: 19px 0 0 0;
 		margin: 0 auto;
 		background-color: #EFEFEA;
