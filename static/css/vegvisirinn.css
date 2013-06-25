@@ -348,18 +348,25 @@ textarea::-webkit-input-placeholder {
 	border-top: 1px solid #aaa;
 }
 
-.photo-credit {
+.info {
 	position: fixed;
 	bottom: 0;
 	left: 30px;
 	padding: 3px 16px 2px;
-	font-size: 10px;
-	font-weight: 300;
-	color: #222;
 	background-color: #EFEFEA;
 	opacity: .92;
 	border-top-left-radius: 2px;
 	border-top-right-radius: 2px;
+}
+
+.social {
+	display: inline-block;
+}
+
+.photo-credit {
+	font-size: 10px;
+	font-weight: 300;
+	color: #222;
 }
 
 
