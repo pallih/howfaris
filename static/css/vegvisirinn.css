@@ -235,6 +235,10 @@ textarea::-webkit-input-placeholder {
 	background-color: #50c4e5;
 }
 
+.distance img {
+	opacity: .7;
+}
+
 .location {
 	background-color: #c9c9c3;
 	padding: 13px 14px 13px 14px;
