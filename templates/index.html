@@ -28,13 +28,13 @@
             <div class="logo"><a href="http://www.vegvisir.is"><img src="../static/img/vegvisir_logo.svg" alt="Vegvísir"></a></div>
 
             <!--<h5>Brottfararstaður</h5>-->
-            <input class="from box input-block-level" type="text" name="from_place" placeholder="Brottfararstaður" autocomplete="off" id="from" />
+            <input class="from box input-block-level" type="text" name="from_place" placeholder="Brottfararstaður" onblur="this.placeholder = 'Brottfararstaður'" autocomplete="off" id="from" />
 
             <!-- Ör -->
             <div class="arrow"><img src="../static/img/arrow.png"></div>
 
             <!--<h5>Áfangastaður</h5>-->
-            <input class="to input-block-level" type="text" name="to_place" placeholder="Áfangastaður" autocomplete="off" id="to" />
+            <input class="to input-block-level" type="text" name="to_place" placeholder="Áfangastaður" onblur="this.placeholder = 'Áfangastaður'" autocomplete="off" id="to" />
 
             <!-- Takki -->
             <button type="submit" class="btn" onclick="submitForm()">Af stað!</button>
