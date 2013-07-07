@@ -9,6 +9,8 @@ LANDSHLUTAR_BASE_URL = 'http://www.vegagerdin.is/vegakerfid/vegalengdir/eftir-la
 LANDSHLUTAR = {'hofudborgarsvaedid', 'reykjanes', 'vesturland', 'vestfirdir', 'nordurland-vestra', 'nordurland-eystra', 'austurland', 'sudurland', 'halendid'}
 PLACE_BASE_URL = 'http://www.vegagerdin.is/vegakerfid/vegalengdir/lengdir?id=%s'
 
+#s = requests.Session()
+
 def get_places():
     for landshluti in LANDSHLUTAR:
         response = requests.get(LANDSHLUTAR_BASE_URL % landshluti)
@@ -62,10 +64,6 @@ def parse_place(id):
                 batch.append(data)
         scraperwiki.sqlite.save(['from','to','distance','info'], data=batch, table_name='distances')
 
-#places_to_do = scraperwiki.sqlite.select("id from places")
-
-#for place in places_to_do:
-#     parse_place(place['id'])
 
 def parse_road_descriptions(url,from_id,to_id,distance,busl,mol,info):
     #print url
@@ -97,14 +95,14 @@ def parse_road_descriptions(url,from_id,to_id,distance,busl,mol,info):
     return data
 
 
-#todo_parse_road_descriptions = scraperwiki.sqlite.select(' * from distances where shortest=1 LIMIT 1')
+# todo_parse_road_descriptions = scraperwiki.sqlite.select(' * from distances')
 
-#todo_parse_road_descriptions = scraperwiki.sqlite.select(' SELECT * from distances AS D LEFT JOIN road_descriptions AS R on D.url = R.url where R.url is null AND D.shortest = 1 limit 30')
+# #todo_parse_road_descriptions = scraperwiki.sqlite.select(' SELECT * from distances AS D LEFT JOIN road_descriptions AS R on D.url = R.url where R.url is null AND D.shortest = 1 limit 30')
 
-#for leg in todo_parse_road_descriptions:
-#    data = parse_road_descriptions(leg['url'],leg['from'],leg['to'],leg['distance'],leg['busl'],leg['mol'],leg['info'])
-    #print type(json.loads(data['roads']))
-#    scraperwiki.sqlite.save(['from','to','roads'], data=data, table_name='road_descriptions')
+# for leg in todo_parse_road_descriptions:
+#     data = parse_road_descriptions(leg['url'],leg['from'],leg['to'],leg['distance'],leg['busl'],leg['mol'],leg['info'])
+#     #print json.loads(data['roads'])
+#     scraperwiki.sqlite.save(['from','to','roads'], data=data, table_name='road_descriptions')
 
 # printme = scraperwiki.sqlite.select(' * from road_descriptions')
 
@@ -114,14 +112,20 @@ def parse_road_descriptions(url,from_id,to_id,distance,busl,mol,info):
 #             print m
 
 def scrape():
-    todo_parse_road_descriptions = scraperwiki.sqlite.select(" * from distances where url NOT IN (SELECT url from road_descriptions) and shortest = 1 limit 15")
+    todo_parse_road_descriptions = scraperwiki.sqlite.select(" * from distances where url NOT IN (SELECT url from road_descriptions) limit 15")
     if not todo_parse_road_descriptions:
         return False
     for leg in todo_parse_road_descriptions:
         data = parse_road_descriptions(leg['url'],leg['from'],leg['to'],leg['distance'],leg['busl'],leg['mol'],leg['info'])
-        print 'done with:', leg['url']
+        #print 'done with:', leg['url']
     #print type(json.loads(data['roads']))
         scraperwiki.sqlite.save(['from','to','roads'], data=data, table_name='road_descriptions')
         return len(data)
 
 while scrape(): pass
+
+
+# places_to_do = scraperwiki.sqlite.select("id from places")
+
+# for place in places_to_do:
+#     parse_place(place['id'])
