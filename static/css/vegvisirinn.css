@@ -301,10 +301,15 @@ textarea::-webkit-input-placeholder {
 	float: left;
 }
 
+.roads .facebook,
+.roads .twitter {
+	float: left;
+	margin-right: 10px;
+}
+
 .roads .facebook a,
 .roads .twitter a {
-	float: left;
-	margin-right: 5px;
+	font-weight: 500;
 }
 
 .roads p.vegnumer {
