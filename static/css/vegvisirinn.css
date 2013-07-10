@@ -301,6 +301,12 @@ textarea::-webkit-input-placeholder {
 	float: left;
 }
 
+.roads.facebook a,
+.roads.twitter a {
+	float: left;
+	margin-right: 5px;
+}
+
 .roads p.vegnumer {
 	float: left;
 	margin-left: 3px;
