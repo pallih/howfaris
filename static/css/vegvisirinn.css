@@ -313,6 +313,11 @@ textarea::-webkit-input-placeholder {
 	font-weight: 700;
 }
 
+.roads .facebook a:hover,
+.roads .twitter a:hover {
+	color: #42b9db;
+}
+
 .roads p.vegnumer {
 	float: left;
 	margin-left: 3px;
