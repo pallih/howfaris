@@ -31,7 +31,16 @@
     <script src="/static/js/bootstrap-typeahead.min.js"></script>
     <script src="/static/js/latinise.min.js"></script>
     <link rel="stylesheet" href="path/to/add2home.css">
-  
+    <script type="text/javascript">
+    var addToHomeConfig = {
+      animationIn: 'bubble',
+      animationOut: 'fade',
+      lifespan:10000,
+      expire:10,
+      returningVisitor:true,
+      message:'Styttu þér leið og fáðu <strong>Vegvísi</strong> á skjáborðið. Smelltu á `%icon` og svo á <strong>Add to Home Screen</strong>.'
+    };
+    </script>
     <script type="application/javascript" src="path/to/add2home.js"></script>
     {% endblock %}
   </head>
