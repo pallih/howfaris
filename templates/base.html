@@ -26,10 +26,22 @@
           <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
       <![endif]-->
     <link rel="shortcut icon" href="{{ url_for('static', filename='ico/favicon.ico') }}">
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
     <script src="/static/js/bootstrap-typeahead.min.js"></script>
     <script src="/static/js/latinise.min.js"></script>
+    <link rel="stylesheet" href="path/to/add2home.css">
+    <script type="text/javascript">
+    var addToHomeConfig = {
+      animationIn: 'bubble',
+      animationOut: 'fade',
+      lifespan:10000,
+      expire:10,
+      returningVisitor:true,
+      message:'Styttu þér leið og fáðu <strong>Vegvísi</strong> á skjáborðið. Smelltu á `%icon` og svo á <strong>Add to Home Screen</strong>.'
+    };
+    </script>
+    <script type="application/javascript" src="path/to/add2home.js"></script>
     {% endblock %}
   </head>
 
@@ -52,6 +64,8 @@
   ga('create', 'UA-31101018-2', 'vegvisir.is');
   ga('send', 'pageview');
 </script>
+
+
 
   </body>
 </html>
