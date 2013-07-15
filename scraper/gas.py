@@ -18,7 +18,7 @@ dieselprice = round(sum(diesel) / float(len(diesel)))
 #print dieselprice
 
 
-f = open('gas.txt','w')
+f = open('/home/pallih/webapps/vegvisir/vegvisir/scraper/gas.txt','w')
 f.write(str(niutiuogfimmprice))
 f.write('\n')
 f.write(str(dieselprice))
