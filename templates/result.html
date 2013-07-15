@@ -62,20 +62,46 @@
 
                 <p>Bundið slitlag:
                     {% if (row[4]|int()/85) > 1 %}
-                     {{(row[4]|int()/85)|round(0,'floor')|int}}  klst. og
-                {{(((row[4]|int()/85) - ((row[4]|int()/85)|round(0, 'floor')))*60)|round|int}} mínútur </p>
+                    {%set busl_klst = (row[4]|int()/85)|round(0,'floor')|int%}
+                    {%set busl_min = (((row[4]|int()/85) - ((row[4]|int()/85)|round(0, 'floor')))*60)|round|int%}
+                    {{busl_klst}} klst. og {{busl_min}} mínútur
+                     </p>
                 {%else%}
-                {{((row[4]|int()/85)*60)|round|int}} mínútur
+                {%set busl_min = ((row[4]|int()/85)*60)|round|int %}
+                {%set busl_klst = 0%}
+                {{busl_min}} mínútur.
                 {% endif %}
-                <p>Möl:
+
                     {% if (row[5]|int()/65) > 1 %}
-                    {{(row[5]|int()/65)|round(0,'floor')|int}}  klst. og
-                {{(((row[5]|int()/65) - ((row[5]|int()/65)|round(0,'floor')))*60)|round|int}} mínútur
+                    {%set mol_klst = (row[5]|int()/65)|round(0,'floor')|int%}
+                    {%set mol_min = (((row[5]|int()/65) - ((row[5]|int()/65)|round(0,'floor')))*60)|round|int%}
+                    <p>Möl:
+                    {{mol_klst}} klst. og {{mol_min}} mínútur
+                </p>
                 {%else%}
-                {{((row[5]|int()/65)*60)|round|int}} mínútur
-                {% endif %}
+                {%set mol_min = ((row[5]|int()/65)*60)|round|int%}
+                 {%set mol_klst = 0%}
+                 {% endif %}
+                 {% if (mol_min > 0) or (mol_klst > 0)%}
+                 <p>Möl:
+                {{mol_min}} mínútur
+            </p>
+            {%endif%}
+
                 <p/>
-                <p> Miðað við 85 km. meðalhraða á bundnu slitlagi og 65 km á möl.</p>
+                <p>Samtals:
+                    {%set samtals_klst = busl_klst + mol_klst%}
+                    {%set samtals_min = busl_min + mol_min%}
+                    {% if (busl_min + mol_min) > 60%}
+                    {%set samtals_klst = samtals_klst + 1%}
+                    {%set samtals_min = samtals_min - 60%}
+                    {% endif %}
+                    {% if samtals_klst >= 1%}
+                    {{samtals_klst}} klst. og {{samtals_min}} mínútur.</p>
+                    {%else%}
+                    {{samtals_min}} mínútur.
+                    {%endif%}
+                <p style="font-size:80%;margin-top:7px"> Miðað við 85 km. meðalhraða á bundnu slitlagi og 65 km á möl.</p>
 
             </div>
 
