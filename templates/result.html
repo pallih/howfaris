@@ -56,6 +56,29 @@
                 {% endif %}
 			</div>
 
+            <!-- Ferðatími -->
+            <div class="roads">
+                <h6>Ferðatími</h6>
+
+                <p>Bundið slitlag:
+                    {% if (row[4]|int()/85) > 1 %}
+                     {{(row[4]|int()/85)|round(0,'floor')|int}}  klst. og
+                {{(((row[4]|int()/85) - ((row[4]|int()/85)|round(0, 'floor')))*60)|round|int}} mínútur </p>
+                {%else%}
+                {{((row[4]|int()/85)*60)|round|int}} mínútur
+                {% endif %}
+                <p>Möl:
+                    {% if (row[5]|int()/65) > 1 %}
+                    {{(row[5]|int()/65)|round(0,'floor')|int}}  klst. og
+                {{(((row[5]|int()/65) - ((row[5]|int()/65)|round(0,'floor')))*60)|round|int}} mínútur
+                {%else%}
+                {{((row[5]|int()/65)*60)|round|int}} mínútur
+                {% endif %}
+                <p/>
+                <p> Miðað við 85 km. meðalhraða á bundnu slitlagi og 65 km á möl.</p>
+
+            </div>
+
             <!-- Leiðarlýsing -->
 			<div class="roads">
 				<h6>Leiðarlýsing</h6>
@@ -67,14 +90,14 @@
                 <p class="vegnumer">({{vegur[1]}})</p>
                 {%endif%}
                 <p class="vegalengd"><span>{{vegur[2]}}</span> km.</p>
-               
+
 
 
                 {%endfor%}
 
-            
 
-            <!-- Helstu kennileiti 
+
+            <!-- Helstu kennileiti
 			</div>
             <div class="roads">
                 <h6>Helstu kennileiti</h6>
@@ -98,7 +121,7 @@
             <div class="roads share">
                 <div class="facebook"><a href="http://www.facebook.com/vegvisir.is" target="_blank">Facebook</a></div>
                 <div class="twitter"><a href="http://twitter.com/vegvisiriceland" target="_blank">Twitter</a></div>
-            </div> 
+            </div>
 
             <!-- <div class="share">
                 <div class="fb-like" data-href="http://www.vegvisir.is" data-send="true" data-layout="button_count" data-width="120" data-show-faces="false" data-font="lucida grande"></div>
