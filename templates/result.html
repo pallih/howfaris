@@ -81,12 +81,12 @@
                 {%else%}
                 {%set mol_min = ((row[5]|int()/65)*60)|round|int%}
                  {%set mol_klst = 0%}
-                 {% endif %}
+
                  {% if (mol_min > 0) or (mol_klst > 0)%}
                  <p>Möl:
-                {{mol_min}} mínútur
-            </p>
+            {{mol_min}} mínútur</p>
             {%endif%}
+            {% endif %}
 
                 <p/>
                 <p>Samtals:
