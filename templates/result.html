@@ -111,7 +111,7 @@
                 {%set disel_kostnadur = ((row[1]|int / 10) * diesel_price|int)|int %}
                 <p>Miðað við nýlegt meðalverð á bensíni þá gæti kostnaðurinn við ferðalagið verið {{bensin_kostnadur}} kr. fyrir bensínbíl en</p>
                 {{disel_kostnadur}} kr. fyrir díselbíl.</p>
-                <p style="font-size:80%;margin-top:7px"> Miðað við {{niutiuogfimm_okt_price}} kr. fyrir bensínlítra, {{diesel_price}} kr. fyrir lítra af dísel og meðal eyðslu 10 lítra á hundrað km. Ekki er gert ráð fyrir kostnaði við pylsur og kók.</p>
+                <p class="disclaimer"> Kostnaður miðast við {{niutiuogfimm_okt_price}} kr. fyrir bensínlítra, {{diesel_price}} kr. fyrir lítra af dísel og meðaleyðslu 10 lítra á hundrað km. Ekki er gert ráð fyrir kostnaði við pylsur og kók.</p>
             </div>
 
             <!-- Leiðarlýsing -->
