@@ -88,8 +88,8 @@
             {% endif %}
 
                 <p/>
-                <p class="vegur">Samtals:</p>
-                   <p class="vegalengd"> {%set samtals_klst = busl_klst + mol_klst%}
+                <p class="vegur"><span>Samtals:</span></p>
+                   <p class="vegalengd"><span> {%set samtals_klst = busl_klst + mol_klst%}
                     {%set samtals_min = busl_min + mol_min%}
                     {% if (busl_min + mol_min) > 60%}
                     {%set samtals_klst = samtals_klst + 1%}
@@ -98,7 +98,7 @@
                     {% if samtals_klst >= 1%}
                     {{samtals_klst}} klst. og {{samtals_min}} mín.
                     {%else%}
-                    {{samtals_min}} mín.</p>
+                    {{samtals_min}} mín.</span></p>
                     {%endif%}
                 <p style="font-size:80%;margin-top:7px"> Ferðatími miðast við 85 km. meðalhraða á bundnu slitlagi og 65 km. á möl.</p>
 
