@@ -109,8 +109,8 @@
                 <h6>Kostnaður</h6>
                 {%set bensin_kostnadur = ((row[1]|int / 10) * niutiuogfimm_okt_price|int)|int %}
                 {%set disel_kostnadur = ((row[1]|int / 10) * diesel_price|int)|int %}
-                <p>Miðað við nýlegt meðalverð á bensíni þá gæti kostnaðurinn við ferðalagið verið {{bensin_kostnadur}} kr. fyrir bensínbíl en</p>
-                {{disel_kostnadur}} kr. fyrir díselbíl.</p>
+                <p>Miðað við nýlegt meðalverð á bensíni þá gæti kostnaðurinn við ferðalagið verið <span>{{bensin_kostnadur}} kr.</span> fyrir bensínbíl en</p>
+                <span>{{disel_kostnadur}} kr.</span> fyrir díselbíl.</p>
                 <p class="disclaimer">Kostnaður miðast við {{niutiuogfimm_okt_price}} kr. fyrir bensínlítra, {{diesel_price}} kr. fyrir lítra af dísel og meðaleyðslu 10 lítra á hundrað km. Ekki er gert ráð fyrir kostnaði við pylsur og kók.</p>
                 <p class="disclaimer">Kostnaður er aðeins til viðmiðunar. Verðin eru fengin frá <a href="http://gsmbensin.is/">GSM Bensín</a>.</p>
             </div>
