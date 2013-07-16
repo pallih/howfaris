@@ -60,48 +60,47 @@
             <div class="roads">
                 <h6>Ferðatími</h6>
 
-                <p>Bundið slitlag:
-                    {% if (row[4]|int()/85) > 1 %}
+                <p  class="vegur">Bundið slitlag:</p>
+                    <p class="vegnumer">{% if (row[4]|int()/85) > 1 %}
                     {%set busl_klst = (row[4]|int()/85)|round(0,'floor')|int%}
                     {%set busl_min = (((row[4]|int()/85) - ((row[4]|int()/85)|round(0, 'floor')))*60)|round|int%}
-                    {{busl_klst}} klst. og {{busl_min}} mínútur
+                    {{busl_klst}} klst. og {{busl_min}} mín.
                      </p>
                 {%else%}
                 {%set busl_min = ((row[4]|int()/85)*60)|round|int %}
                 {%set busl_klst = 0%}
-                {{busl_min}} mínútur.
+                {{busl_min}} mín.
                 {% endif %}
 
                     {% if (row[5]|int()/65) > 1 %}
                     {%set mol_klst = (row[5]|int()/65)|round(0,'floor')|int%}
                     {%set mol_min = (((row[5]|int()/65) - ((row[5]|int()/65)|round(0,'floor')))*60)|round|int%}
-                    <p>Möl:
-                    {{mol_klst}} klst. og {{mol_min}} mínútur
-                </p>
+                    <p class="vegur">Möl:</p>
+                    <p>{{mol_klst}} klst. og {{mol_min}} mín.</p>
                 {%else%}
                 {%set mol_min = ((row[5]|int()/65)*60)|round|int%}
                  {%set mol_klst = 0%}
 
                  {% if (mol_min > 0) or (mol_klst > 0)%}
-                 <p>Möl:
-            {{mol_min}} mínútur</p>
+                 <p class="vegur">Möl:</p>
+            <p class="vegnumer">{{mol_min}} mín.</p>
             {%endif%}
             {% endif %}
 
                 <p/>
-                <p>Samtals:
-                    {%set samtals_klst = busl_klst + mol_klst%}
+                <p class="vegur">Samtals:</p>
+                   <p class="vegnumer"> {%set samtals_klst = busl_klst + mol_klst%}
                     {%set samtals_min = busl_min + mol_min%}
                     {% if (busl_min + mol_min) > 60%}
                     {%set samtals_klst = samtals_klst + 1%}
                     {%set samtals_min = samtals_min - 60%}
                     {% endif %}
                     {% if samtals_klst >= 1%}
-                    {{samtals_klst}} klst. og {{samtals_min}} mínútur.</p>
+                    {{samtals_klst}} klst. og {{samtals_min}} mín.
                     {%else%}
-                    {{samtals_min}} mínútur.
+                    {{samtals_min}} mín.</p>
                     {%endif%}
-                <p style="font-size:80%;margin-top:7px"> Miðað við 85 km. meðalhraða á bundnu slitlagi og 65 km á möl.</p>
+                <p style="font-size:80%;margin-top:7px"> Ferðatími miðast við 85 km. meðalhraða á bundnu slitlagi og 65 km. á möl.</p>
 
             </div>
 
