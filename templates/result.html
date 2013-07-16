@@ -107,8 +107,8 @@
             <!-- Kostnaður -->
             <div class="roads">
                 <h6>Kostnaður</h6>
-                {%set bensin_kostnadur = ((row[1]|int / 10) * niutiuogfimm_okt_price|int)|int %}
-                {%set disel_kostnadur = ((row[1]|int / 10) * diesel_price|int)|int %}
+                {%set bensin_kostnadur = ((row[1]|int / 10) * niutiuogfimm_okt_price|int)|int|thousand_seperator %}
+                {%set disel_kostnadur = ((row[1]|int / 10) * diesel_price|int)|int|thousand_seperator %}
                 <p class="vegur">Bensínbíll</p>
                 <p class="vegalengd"><span>{{bensin_kostnadur}} kr.</span></p>
                 <p class="vegur">Díselbíll</p>
