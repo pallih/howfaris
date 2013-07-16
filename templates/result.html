@@ -61,7 +61,7 @@
                 <h6>Ferðatími</h6>
 
                 <p  class="vegur">Bundið slitlag:</p>
-                    <p class="vegnumer">{% if (row[4]|int()/85) > 1 %}
+                    <p class="vegalengd">{% if (row[4]|int()/85) > 1 %}
                     {%set busl_klst = (row[4]|int()/85)|round(0,'floor')|int%}
                     {%set busl_min = (((row[4]|int()/85) - ((row[4]|int()/85)|round(0, 'floor')))*60)|round|int%}
                     {{busl_klst}} klst. og {{busl_min}} mín.
@@ -83,13 +83,13 @@
 
                  {% if (mol_min > 0) or (mol_klst > 0)%}
                  <p class="vegur">Möl:</p>
-            <p class="vegnumer">{{mol_min}} mín.</p>
+            <p class="vegalengd">{{mol_min}} mín.</p>
             {%endif%}
             {% endif %}
 
                 <p/>
                 <p class="vegur">Samtals:</p>
-                   <p class="vegnumer"> {%set samtals_klst = busl_klst + mol_klst%}
+                   <p class="vegalengd"> {%set samtals_klst = busl_klst + mol_klst%}
                     {%set samtals_min = busl_min + mol_min%}
                     {% if (busl_min + mol_min) > 60%}
                     {%set samtals_klst = samtals_klst + 1%}
