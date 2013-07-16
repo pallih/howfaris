@@ -334,6 +334,12 @@ textarea::-webkit-input-placeholder {
 	text-align: right;
 }
 
+.roads p.disclaimer {
+	font-size: 11px;
+	margin-top: 9px;
+	line-height: 16px;
+}
+
 .vegagerdin {
 	padding-top: 10px;
 }
