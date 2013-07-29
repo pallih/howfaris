@@ -306,7 +306,8 @@ textarea::-webkit-input-placeholder {
 
 .roads p.bensin,
 .roads p.disel {
-	margin-left: 65px;
+	display: inline-block;
+	float: left;
 }
 
 .roads .facebook,
