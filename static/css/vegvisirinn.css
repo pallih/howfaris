@@ -304,10 +304,13 @@ textarea::-webkit-input-placeholder {
 	float: left;
 }
 
+.roads p.bill {
+	display: block;
+}
+
 .roads p.bensin,
 .roads p.disel {
-	display: inline-block;
-	float: left;
+
 }
 
 .roads .facebook,
