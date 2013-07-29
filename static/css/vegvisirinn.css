@@ -334,7 +334,7 @@ textarea::-webkit-input-placeholder {
 	text-align: right;
 }
 
-.roads.samtals {
+.roads .samtals {
 	margin-top: 3px;
 	padding-top: 3px;
 	border-top: 1px dotted #ccc;
