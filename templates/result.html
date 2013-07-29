@@ -46,15 +46,13 @@
 			<div class="roads">
 				<h6>Vegir</h6>
                 {% if row[5] == '0' %}
-				<p class="vegur">Bundið slitlag alla leið! <p/>
+				<p>Bundið slitlag alla leið! <p/>
                 {% elif row[4] == '0' %}
-                <p class="vegur">Malarvegur alla leið! <p/>
+                <p>Möl alla leið! <p/>
                 {%else%}
 
-                <p class="vegur">Bundið slitlag</p>
-                <p class="vegalengd">{{row[4]}} km.</p>
-				<p class="vegur">Malarvegur</p>
-                <p class="vegalengd">{{row[5]}} km.</p>
+                 <p>Bundið slitlag í <span>{{row[4]}}</span> km. og
+				möl í <span>{{row[5]}}</span> km.<p>
                 {% endif %}
 			</div>
 
@@ -74,24 +72,17 @@
                 {{busl_min}} mín.
                 {% endif %}
 
-<<<<<<< HEAD
-                    {% if (row[5]|int()/65) > 1 %}
-                    {%set mol_klst = (row[5]|int()/65)|round(0,'floor')|int%}
-                    {%set mol_min = (((row[5]|int()/65) - ((row[5]|int()/65)|round(0,'floor')))*60)|round|int%}
-                    <p class="vegur">Malarvegur</p>
-=======
                     {% if (row[5]|int()/75) > 1 %}
                     {%set mol_klst = (row[5]|int()/75)|round(0,'floor')|int%}
                     {%set mol_min = (((row[5]|int()/75) - ((row[5]|int()/75)|round(0,'floor')))*60)|round|int%}
                     <p class="vegur">Möl</p>
->>>>>>> 6a7fff4c105f55fdc88f9ad18e2c7abd01794728
                     <p class="vegalengd">{{mol_klst}} klst. og {{mol_min}} mín.</p>
                 {%else%}
                 {%set mol_min = ((row[5]|int()/75)*60)|round|int%}
                  {%set mol_klst = 0%}
 
                  {% if (mol_min > 0) or (mol_klst > 0)%}
-                 <p class="vegur">Malarvegur</p>
+                 <p class="vegur">Möl</p>
             <p class="vegalengd">{{mol_min}} mín.</p>
             {%endif%}
             {% endif %}
@@ -109,11 +100,7 @@
                     {%else%}
                     {{samtals_min}} mín.</span></p>
                     {%endif%}
-<<<<<<< HEAD
-                <p class="disclaimer"> Ferðatími miðast við 85 km. meðalhraða á bundnu slitlagi og 65 km. á malarvegi.</p>
-=======
                 <p class="disclaimer"> Ferðatími miðast við 85 km. meðalhraða á bundnu slitlagi og 75 km. á möl.</p>
->>>>>>> 6a7fff4c105f55fdc88f9ad18e2c7abd01794728
 
             </div>
 
