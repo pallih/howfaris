@@ -42,19 +42,6 @@
 
             </form>
 
-            <!-- Vegir -->
-			<div class="roads">
-				<h6>Vegir</h6>
-                {% if row[5] == '0' %}
-				<p>Bundið slitlag alla leið! <p/>
-                {% elif row[4] == '0' %}
-                <p>Möl alla leið! <p/>
-                {%else%}
-
-                <p class="vegur">Bundið slitlag</p> <p class="vegalengd"><span>{{row[4]}} km.</span></p>
-				<p  class="vegur">Malarvegur</p> <p class="vegalengd"><span>{{row[5]}} km.</span></p>
-                {% endif %}
-			</div>
 
             <!-- Ferðatími -->
             <div class="roads">
@@ -121,6 +108,20 @@
                 <p class="disclaimer">Ekki er gert ráð fyrir kostnaði við pylsur og kók.</p>
             </div>
 
+             <!-- Vegir -->
+            <div class="roads">
+                <h6>Vegir</h6>
+                {% if row[5] == '0' %}
+                <p>Bundið slitlag alla leið! <p/>
+                {% elif row[4] == '0' %}
+                <p>Möl alla leið! <p/>
+                {%else%}
+
+                <p class="vegur">Bundið slitlag</p> <p class="vegalengd"><span>{{row[4]}} km.</span></p>
+                <p  class="vegur">Malarvegur</p> <p class="vegalengd"><span>{{row[5]}} km.</span></p>
+                {% endif %}
+            </div>
+            
             <!-- Leiðarlýsing -->
 			<div class="roads">
 				<h6>Leiðarlýsing</h6>
