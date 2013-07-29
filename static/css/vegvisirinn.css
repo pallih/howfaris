@@ -308,11 +308,6 @@ textarea::-webkit-input-placeholder {
 	display: block;
 }
 
-.roads p.bensin,
-.roads p.disel {
-
-}
-
 .roads .facebook,
 .roads .twitter {
 	float: left;
