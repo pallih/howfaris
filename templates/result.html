@@ -61,45 +61,49 @@
                 <h6>Ferðatími</h6>
 
                 <p class="vegur">Bundið slitlag</p>
-                    <p class="vegalengd">{% if (row[4]|int()/85) > 1 %}
-                    {%set busl_klst = (row[4]|int()/85)|round(0,'floor')|int%}
-                    {%set busl_min = (((row[4]|int()/85) - ((row[4]|int()/85)|round(0, 'floor')))*60)|round|int%}
-                    {{busl_klst}} klst. og {{busl_min}} mín.
-                     </p>
+                <p class="vegalengd">{% if (row[4]|int()/85) > 1 %}
+                {%set busl_klst = (row[4]|int()/85)|round(0,'floor')|int%}
+                {%set busl_min = (((row[4]|int()/85) - ((row[4]|int()/85)|round(0, 'floor')))*60)|round|int%}
+                {{busl_klst}} klst. og {{busl_min}} mín.
+                 </p>
+
                 {%else%}
                 {%set busl_min = ((row[4]|int()/85)*60)|round|int %}
                 {%set busl_klst = 0%}
                 {{busl_min}} mín.
                 {% endif %}
 
-                    {% if (row[5]|int()/75) > 1 %}
-                    {%set mol_klst = (row[5]|int()/75)|round(0,'floor')|int%}
-                    {%set mol_min = (((row[5]|int()/75) - ((row[5]|int()/75)|round(0,'floor')))*60)|round|int%}
-                    <p class="vegur">Malarvegur</p>
-                    <p class="vegalengd">{{mol_klst}} klst. og {{mol_min}} mín.</p>
+                {% if (row[5]|int()/75) > 1 %}
+                {%set mol_klst = (row[5]|int()/75)|round(0,'floor')|int%}
+                {%set mol_min = (((row[5]|int()/75) - ((row[5]|int()/75)|round(0,'floor')))*60)|round|int%}
+
+                <p class="vegur">Malarvegur</p>
+                <p class="vegalengd">{{mol_klst}} klst. og {{mol_min}} mín.</p>
                 {%else%}
                 {%set mol_min = ((row[5]|int()/75)*60)|round|int%}
-                 {%set mol_klst = 0%}
+                {%set mol_klst = 0%}
 
-                 {% if (mol_min > 0) or (mol_klst > 0)%}
-                 <p class="vegur">Malarvegur</p>
-            <p class="vegalengd">{{mol_min}} mín.</p>
-            {%endif%}
-            {% endif %}
+                {% if (mol_min > 0) or (mol_klst > 0)%}
+                <p class="vegur">Malarvegur</p>
+                <p class="vegalengd">{{mol_min}} mín.</p>
+                {%endif%}
+                {% endif %}<p/>
 
-                <p/>
+                <div class="samtals">
                 <p class="vegur"><span>Samtals</span></p>
-                   <p class="vegalengd"><span> {%set samtals_klst = busl_klst + mol_klst%}
-                    {%set samtals_min = busl_min + mol_min%}
-                    {% if (busl_min + mol_min) > 60%}
-                    {%set samtals_klst = samtals_klst + 1%}
-                    {%set samtals_min = samtals_min - 60%}
-                    {% endif %}
-                    {% if samtals_klst >= 1%}
-                    {{samtals_klst}} klst. og {{samtals_min}} mín.
-                    {%else%}
-                    {{samtals_min}} mín.</span></p>
-                    {%endif%}
+                <p class="vegalengd"><span> {%set samtals_klst = busl_klst + mol_klst%}
+                {%set samtals_min = busl_min + mol_min%}
+                {% if (busl_min + mol_min) > 60%}
+                {%set samtals_klst = samtals_klst + 1%}
+                {%set samtals_min = samtals_min - 60%}
+                {% endif %}
+                {% if samtals_klst >= 1%}
+                {{samtals_klst}} klst. og {{samtals_min}} mín.
+                {%else%}
+                {{samtals_min}} mín.</span></p>
+                {%endif%}
+                </div>
+
                 <p class="disclaimer"> Ferðatími miðast við 85 km. meðalhraða á bundnu slitlagi og 75 km. á malarvegi.</p>
 
             </div>

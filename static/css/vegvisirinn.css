@@ -334,6 +334,12 @@ textarea::-webkit-input-placeholder {
 	text-align: right;
 }
 
+.roads.samtals {
+	margin-top: 3px;
+	padding-top: 3px;
+	border-top: 1px dotted #ccc;
+}
+
 .roads p.disclaimer {
 	font-size: 11px;
 	margin-top: 9px;
