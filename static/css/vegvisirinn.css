@@ -305,7 +305,11 @@ textarea::-webkit-input-placeholder {
 }
 
 .roads p.bensin {
-	margin-left: 78px;
+	margin-left: 65px;
+}
+
+.roads p.disel {
+	margin-left: 55px;
 }
 
 .roads .facebook,
