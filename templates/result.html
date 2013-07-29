@@ -101,15 +101,21 @@
                 {%set bensin_kostnadur_5 = ((row[1]|int / 20) * niutiuogfimm_okt_price|int)|int|thousand_seperator %}
                 {%set bensin_kostnadur_10 = ((row[1]|int / 10) * niutiuogfimm_okt_price|int)|int|thousand_seperator %}
                 {%set bensin_kostnadur_15 = ((row[1]|int / 6.666) * niutiuogfimm_okt_price|int)|int|thousand_seperator %}
-                {%set disel_kostnadur = ((row[1]|int / 10) * diesel_price|int)|int|thousand_seperator %}
-                <p class="vegur">Bensínbíll 5l./100km.</p>
+                {%set disel_kostnadur_5 = ((row[1]|int / 20) * diesel_price|int)|int|thousand_seperator %}
+                {%set disel_kostnadur_10 = ((row[1]|int / 10) * diesel_price|int)|int|thousand_seperator %}
+                {%set disel_kostnadur_15 = ((row[1]|int / 6.666) * diesel_price|int)|int|thousand_seperator %}
+                <p class="vegur">Bensínbíll – 5l./100km.</p>
                 <p class="vegalengd"><span>{{bensin_kostnadur_5}} kr.</span></p>
-                <p class="vegur">Bensínbíll 10l./100km.</p>
+                <p class="vegur">Bensínbíll – 10l./100km.</p>
                 <p class="vegalengd"><span>{{bensin_kostnadur_10}} kr.</span></p>
-                <p class="vegur">Bensínbíll 15l./100km.</p>
+                <p class="vegur">Bensínbíll – 15l./100km.</p>
                 <p class="vegalengd"><span>{{bensin_kostnadur_15}} kr.</span></p>
-                <p class="vegur">Díselbíll</p>
-                <p class="vegalengd"><span>{{disel_kostnadur}} kr.</span></p>
+                <p class="vegur">Díselbíll – 5l./100km.</p>
+                <p class="vegalengd"><span>{{disel_kostnadur_5}} kr.</span></p>
+                <p class="vegur">Díselbíll – 10l./100km.</p>
+                <p class="vegalengd"><span>{{disel_kostnadur_10}} kr.</span></p>
+                <p class="vegur">Díselbíll – 15l./100km.</p>
+                <p class="vegalengd"><span>{{disel_kostnadur_15}} kr.</span></p>
                 <p class="disclaimer">Kostnaður miðast við {{niutiuogfimm_okt_price}} kr. fyrir bensínlítra, {{diesel_price}} kr. fyrir lítra af dísel og meðaleyðslu upp á 10l./100km. Verðin eru fengin frá <a href="http://gsmbensin.is/">GSM Bensín</a>.</p>
                 <p class="disclaimer">Ekki er gert ráð fyrir kostnaði við pylsur og kók.</p>
             </div>
