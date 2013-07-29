@@ -104,11 +104,12 @@
                 {%set disel_kostnadur_5 = ((row[1]|int / 20) * diesel_price|int)|int|thousand_seperator %}
                 {%set disel_kostnadur_10 = ((row[1]|int / 10) * diesel_price|int)|int|thousand_seperator %}
                 {%set disel_kostnadur_15 = ((row[1]|int / 6.666) * diesel_price|int)|int|thousand_seperator %}
-                <p class="vegur">Bensínbíll – 5 l./100km.</p>
+                <p class="vegur">Bensínbíll</p>
+                <p class="vegur">– 5 l./100km.</p>
                 <p class="vegalengd"><span>{{bensin_kostnadur_5}} kr.</span></p>
-                <p class="vegur bensin">– 10 l./100km.</p>
+                <p class="vegur">– 10 l./100km.</p>
                 <p class="vegalengd"><span>{{bensin_kostnadur_10}} kr.</span></p>
-                <p class="vegur bensin">– 15 l./100km.</p>
+                <p class="vegur">– 15 l./100km.</p>
                 <p class="vegalengd"><span>{{bensin_kostnadur_15}} kr.</span></p>
                 <p class="vegur">Díselbíll – 5 l./100km.</p>
                 <p class="vegalengd"><span>{{disel_kostnadur_5}} kr.</span></p>
