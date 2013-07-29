@@ -100,7 +100,7 @@
                 <h6>Kostnaður</h6>
                 {%set bensin_kostnadur_5 = ((row[1]|int / 20) * niutiuogfimm_okt_price|int)|int|thousand_seperator %}
                 {%set bensin_kostnadur_10 = ((row[1]|int / 10) * niutiuogfimm_okt_price|int)|int|thousand_seperator %}
-                {%set bensin_kostnadur_15 = ((row[1]|int / 6.67) * niutiuogfimm_okt_price|int)|int|thousand_seperator %}
+                {%set bensin_kostnadur_15 = ((row[1]|int / 6.666) * niutiuogfimm_okt_price|int)|int|thousand_seperator %}
                 {%set disel_kostnadur = ((row[1]|int / 10) * diesel_price|int)|int|thousand_seperator %}
                 <p class="vegur">Bensínbíll 5l./100km.</p>
                 <p class="vegalengd"><span>{{bensin_kostnadur_5}} kr.</span></p>
