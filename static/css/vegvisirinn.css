@@ -6,11 +6,14 @@ html, body {
 }
 
 .background-image {
-	background: url("../img/road_05.jpg") no-repeat center center;
-	background-size: cover;
+	position: fixed;
+	z-index: -999;
+	top: 0;
+	left: 0;
 	width: 100%;
-	margin: 0;
-	padding: 0;
+	height: 100%;
+	background-image: url('../img/road_05.jpg') no-repeat center center;
+	background-size: cover;
 }
 
 #full-screen-background-image {
