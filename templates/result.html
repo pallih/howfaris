@@ -148,6 +148,9 @@
                 {%endif%}
                 <p class="vegalengd"><span>{{vegur[2]}}</span> km.</p>
                 {%endfor%}
+                {% if '*' in row[0] %}
+                <p class="disclaimer">Ath. farið um fjallvegi (opnir hluta sumars) milli staða. Ekki fært fólksbílum.</p>
+                {%endif%}
 
 
 
