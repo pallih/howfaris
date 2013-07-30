@@ -12,6 +12,9 @@ html, body {
 	left: 0;
 	width: 100%;
 	height: 100%;
+}
+
+.background-image.error{
 	background: url('../img/road_05.jpg') no-repeat center center;
 	background-size: cover;
 }
