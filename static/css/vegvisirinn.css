@@ -5,6 +5,14 @@ html, body {
   margin: 0;
 }
 
+.background-image {
+	background: url("../img/road_05.jpg") no-repeat center center;
+	background-size: cover;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
 #full-screen-background-image {
   z-index: -999;
   width: 100%;
