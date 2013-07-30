@@ -12,11 +12,19 @@ html, body {
 	left: 0;
 	width: 100%;
 	height: 100%;
+	background-size: cover;
 }
 
 .background-image.error{
 	background: url('../img/road_05.jpg') no-repeat center center;
-	background-size: cover;
+}
+
+.background-image.result{
+	background: url('../img/road_01.jpg') no-repeat center center;
+}
+
+.background-image.index{
+	background: url('../img/road_02.jpg') no-repeat center center;
 }
 
 .pattern {
