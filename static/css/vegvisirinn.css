@@ -16,17 +16,6 @@ html, body {
 	background-size: cover;
 }
 
-#full-screen-background-image {
-  z-index: -999;
-  width: 100%;
-  max-width: none;
-  min-width: none;
-  height: auto;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-}
-
 .pattern {
 	position: fixed;
 	z-index: -99;
@@ -436,12 +425,6 @@ textarea::-webkit-input-placeholder {
 	}
 }
 
-@media all and (max-aspect-ratio: 16/9) {
-	#full-screen-background-image {
-		height:100%;
-		width:auto;
-	}
-}
 
 @media all and (max-width: 480px) {
 	
@@ -451,13 +434,6 @@ textarea::-webkit-input-placeholder {
 
 	.background-image {
 		display: none;
-	}
-	
-	.bg {
-		display:  none;
-		width: 100%;
-		margin: 0;
-		padding: 0;
 	}
 
 	.pattern {
@@ -486,13 +462,6 @@ textarea::-webkit-input-placeholder {
 
 	.background-image {
 		display: none;
-	}
-
-	.bg {
-		display:  none;
-		width: 100%;
-		margin: 0;
-		padding: 0;
 	}
 
 	.pattern {
