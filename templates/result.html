@@ -13,8 +13,9 @@
 
     	<div class="well form-results">
 
+
 			<div>{% for row in rows %}
-			    {% if row[6] %}
+
 
 			<a href="http://www.vegvisir.is"><div class="logo"></div></a>
 
@@ -135,7 +136,6 @@
                 <p  class="vegur">Malarvegur</p> <p class="vegalengd"><span>{{row[5]}} km.</span></p>
                 {% endif %}
             </div>
-
             <!-- Leiðarlýsing -->
 			<div class="roads">
 				<h6>Leiðarlýsing</h6>
@@ -147,9 +147,6 @@
                 <p class="vegnumer">({{vegur[1]}})</p>
                 {%endif%}
                 <p class="vegalengd"><span>{{vegur[2]}}</span> km.</p>
-
-
-
                 {%endfor%}
 
 
@@ -258,7 +255,7 @@ $('input[name=to_id]').val(rand2['id']);
 
 </script>
 
-				{% endif %}
+
 				{% endfor %}
 
 				{% endblock %}
