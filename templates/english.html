@@ -1,0 +1,101 @@
+{% extends "base_english.html" %}
+{% block title %}{% endblock %}
+{% block content %}
+
+
+<div class="background-image index"></div>
+
+<div class="pattern"></div>
+
+    <div class="container">
+
+
+        <form class="well form-search" action="/result" method="post" autocomplete="off" id ="route_select">
+            <input id="from_id" type="hidden" name="from_id" >
+            <input id="to_id" type="hidden" name="to_id" >
+
+            <a href="http://www.vegvisir.is"><div class="logo"></div></a>
+
+            <!--<h5>Brottfararstaður</h5>-->
+            <input class="from box input-block-level" type="text" name="from_place" placeholder="Departure" onblur="this.placeholder = 'Departure'" autocomplete="off" id="from" />
+
+            <!-- Ör -->
+            <div class="arrow"><img src="../static/img/arrow.png"></div>
+
+            <!--<h5>Áfangastaður</h5>-->
+            <input class="to input-block-level" type="text" name="to_place" placeholder="Destination" onblur="this.placeholder = 'Destination'" autocomplete="off" id="to" />
+
+            <!-- Takki -->
+            <button type="submit" class="btn" onclick="submitForm()">Go!</button>
+
+            <!-- Social -->
+            <div class="roads share">
+                <div class="facebook"><a href="http://www.facebook.com/vegvisir.is" target="_blank">Facebook</a></div>
+                <div class="twitter"><a href="http://twitter.com/vegvisiriceland" target="_blank">Twitter</a></div>
+            </div> 
+        </form>
+
+
+    </div>
+
+<!-- <div class="info">
+    <div class="social"><a href="http://www.facebook.com/vegvisir.is" target="_blank"><i class="icon-facebook-sign"></i></a></div>
+    <div class="social"><a href="http://twitter.com/vegvisiriceland" target="_blank"><i class="icon-twitter"></i></a></div>
+    <div class="photo-credit"><a href="http://www.marinothorlacius.com" target="_blank">Ljósmynd: Marinó Thorlacius</a></div>
+</div> -->
+
+
+<script type="text/javascript">
+var source = [
+        {% for row in rows %}{ id: {{ row[1] }}, name: '{{ row[0] }}' },{% endfor %}
+        ];
+     $('.from').typeahead({
+        source: source,
+        itemSelected: function(item, val, text){
+        $('#from_id').val(val);
+    }
+    });
+     $('.to').typeahead({
+        source: source,
+        itemSelected: function(item, val, text){
+        $('#to_id').val(val);
+    }
+    });
+
+
+
+     $('input:text').focus(
+    function(){
+        $(this).attr("placeholder","");
+    });
+
+     function submitForm(){
+        var safe_from = $(route_select.from).val().latinise();
+        var safe_to = $(route_select.to).val().latinise();
+        if (safe_from == '' && safe_to == '') {
+            var rand1 = source[Math.floor(Math.random() * source.length)];
+            var rand2 = source[Math.floor(Math.random() * source.length)];
+            safe_from = rand1['name'].latinise();
+$('input[name=from_place]').val(rand1['name']);
+$('input[name=from_id]').val(rand1['id']);
+    safe_to = rand2['name'].latinise();
+$('input[name=to_place]').val(rand2['name']);
+$('input[name=to_id]').val(rand2['id']);
+    }
+
+if (safe_to == '') {
+            var rand2 = source[Math.floor(Math.random() * source.length)];
+    safe_to = rand2['name'].latinise();
+$('input[name=to_place]').val(rand2['name']);
+$('input[name=to_id]').val(rand2['id']);
+    }
+
+        safe_from = safe_from.replace(/\s/g, "_");
+        safe_to = safe_to.replace(/\s/g, "_");
+    $("#route_select").attr("action",'/'+safe_from+'/'+safe_to);
+    $("#route_select").submit();
+}
+
+</script>
+
+{% endblock %}
