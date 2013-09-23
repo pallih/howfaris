@@ -5,6 +5,12 @@ html, body {
   margin: 0;
 }
 
+body,
+input,
+button 	{
+	-webkit-font-smoothing: antialiased; 
+}
+
 .background-image {
 	position: fixed;
 	z-index: -999;
