@@ -1,0 +1,266 @@
+{% extends "base_en.html" %}
+{% block title %}: {{from_place}} - {{to_place}},{% for row in rows %} {{row[1]}} km.{%endfor%}{% endblock %}
+{% block content %}
+
+
+<div class="background-image result"></div>
+
+<div class="pattern">
+</div>
+
+    <div class="container">
+
+    	<div class="well form-results">
+
+
+			<div>{% for row in rows %}
+
+
+			<a href="http://www.vegvisir.is"><div class="logo"></div></a>
+
+            <form action="/" method="post" autocomplete="off" id ="route_select">
+                <input id="from_id" type="hidden" name="from_id" value="{{from_id}}">
+                <input id="to_id" type="hidden" name="to_id" value="{{to_id}}">
+
+
+			<!-- Brottfararstaður -->
+
+			<input class="from input-block-level" type="text" name="from_place" placeholder="{{from_place}}" id="from" autocomplete="off" value="{{from_place}}" id="from"/>
+
+
+			<!-- Ör -->
+			<div class="arrow"><img src="/static/img/arrow.png"></div>
+
+
+			<!-- Áfangastaður -->
+
+            <input class="to input-block-level" type="text" name="to_place" placeholder="{{to_place}}" id ="to" autocomplete="off" value="{{to_place}}"/>
+
+
+            <!-- Stysta vegalengd -->
+            <div class="distance"><button type="submit" class="btn" class="btn" onclick="submitForm()"><img src="/static/img/reload.png" data-name="reload" alt="reload"></button>{{row[1]}}<span>km<span></div>
+
+            </form>
+
+
+            <!-- Ferðatími -->
+            <div class="roads">
+                <h6>Travelling time</h6>
+
+                <p class="vegur">Asphalt</p>
+                <p class="vegalengd">{% if (row[4]|int()/85) > 1 %}
+                {%set busl_klst = (row[4]|int()/85)|round(0,'floor')|int%}
+                {%set busl_min = (((row[4]|int()/85) - ((row[4]|int()/85)|round(0, 'floor')))*60)|round|int%}
+                {{busl_klst}} klst. og {{busl_min}} mín.
+                 </p>
+
+                {%else%}
+                {%set busl_min = ((row[4]|int()/85)*60)|round|int %}
+                {%set busl_klst = 0%}
+                {{busl_min}} mín.
+                {% endif %}
+
+                {% if (row[5]|int()/75) > 1 %}
+                {%set mol_klst = (row[5]|int()/75)|round(0,'floor')|int%}
+                {%set mol_min = (((row[5]|int()/75) - ((row[5]|int()/75)|round(0,'floor')))*60)|round|int%}
+
+                <p class="vegur">Gravel</p>
+                <p class="vegalengd">{{mol_klst}} klst. og {{mol_min}} mín.</p>
+                {%else%}
+                {%set mol_min = ((row[5]|int()/75)*60)|round|int%}
+                {%set mol_klst = 0%}
+
+                {% if (mol_min > 0) or (mol_klst > 0)%}
+                <p class="vegur">Gravel</p>
+                <p class="vegalengd">{{mol_min}} mín.</p>
+                {%endif%}
+                {% endif %}<p/>
+
+                <div class="samtals">
+                <p class="vegur"><span>Total</span></p>
+                <p class="vegalengd"><span> {%set samtals_klst = busl_klst + mol_klst%}
+                {%set samtals_min = busl_min + mol_min%}
+                {% if (busl_min + mol_min) > 60%}
+                {%set samtals_klst = samtals_klst + 1%}
+                {%set samtals_min = samtals_min - 60%}
+                {% endif %}
+                {% if samtals_klst >= 1%}
+                {{samtals_klst}} klst. og {{samtals_min}} mín.
+                {%else%}
+                {{samtals_min}} mín.</span></p>
+                {%endif%}
+                </div>
+
+                <p class="disclaimer"> Ferðatími miðast við 85 km. meðalhraða á bundnu slitlagi og 75 km. á malarvegi.</p>
+
+            </div>
+
+            <!-- Kostnaður -->
+            <div class="roads">
+                <h6>Kostnaður</h6>
+                {%set bensin_kostnadur_5 = ((row[1]|int / 20) * niutiuogfimm_okt_price|int)|int|thousand_seperator %}
+                {%set bensin_kostnadur_10 = ((row[1]|int / 10) * niutiuogfimm_okt_price|int)|int|thousand_seperator %}
+                {%set bensin_kostnadur_15 = ((row[1]|int / 6.6667) * niutiuogfimm_okt_price|int)|int|thousand_seperator %}
+                {%set disel_kostnadur_5 = ((row[1]|int / 20) * diesel_price|int)|int|thousand_seperator %}
+                {%set disel_kostnadur_10 = ((row[1]|int / 10) * diesel_price|int)|int|thousand_seperator %}
+                {%set disel_kostnadur_15 = ((row[1]|int / 6.6667) * diesel_price|int)|int|thousand_seperator %}
+                <p class="bill"><span>Bensín</span></p>
+                <p class="vegur">– 5 l./100km.</p>
+                <p class="vegalengd"><span>{{bensin_kostnadur_5}} kr.</span></p>
+                <p class="vegur">– 10 l./100km.</p>
+                <p class="vegalengd"><span>{{bensin_kostnadur_10}} kr.</span></p>
+                <p class="vegur">– 15 l./100km.</p>
+                <p class="vegalengd"><span>{{bensin_kostnadur_15}} kr.</span></p>
+                <p class="bill"><span>Dísel</span></p>
+                <p class="vegur">– 5 l./100km.</p>
+                <p class="vegalengd"><span>{{disel_kostnadur_5}} kr.</span></p>
+                <p class="vegur">– 10 l./100km.</p>
+                <p class="vegalengd"><span>{{disel_kostnadur_10}} kr.</span></p>
+                <p class="vegur">– 15 l./100km.</p>
+                <p class="vegalengd"><span>{{disel_kostnadur_15}} kr.</span></p>
+                <p class="disclaimer">Kostnaður miðast við {{niutiuogfimm_okt_price}} kr. fyrir bensínlítra og {{diesel_price}} kr. fyrir lítra af dísel. Verðin eru fengin frá <a href="http://gsmbensin.is/">GSM Bensín</a>.</p>
+                <p class="disclaimer">Ekki er gert ráð fyrir kostnaði við pylsur og kók.</p>
+            </div>
+
+             <!-- Vegir -->
+            <div class="roads">
+                <h6>Vegir</h6>
+                {% if row[5] == '0' %}
+                <p>Bundið slitlag alla leið! <p/>
+                {% elif row[4] == '0' %}
+                <p>Möl alla leið! <p/>
+                {%else%}
+
+                <p class="vegur">Bundið slitlag</p> <p class="vegalengd"><span>{{row[4]}} km.</span></p>
+                <p  class="vegur">Malarvegur</p> <p class="vegalengd"><span>{{row[5]}} km.</span></p>
+                {% endif %}
+            </div>
+            <!-- Leiðarlýsing -->
+			<div class="roads">
+				<h6>Leiðarlýsing</h6>
+                {% for vegur in vegir %}
+				<p class="vegur">{{vegur[0]|replace("null", "Ónefndur vegur")}}</p>
+                {% if vegur[1] == '_' %}
+                <p class="vegnumer"></p>
+                {%else%}
+                <p class="vegnumer">({{vegur[1]}})</p>
+                {%endif%}
+                <p class="vegalengd"><span>{{vegur[2]}}</span> km.</p>
+                {%endfor%}
+                {% if '*' in row[0] %}
+                <p class="disclaimer">Ath. farið um fjallvegi (opnir hluta sumars) milli staða. Ekki fært fólksbílum.</p>
+                {%endif%}
+
+
+
+            <!-- Helstu kennileiti
+			</div>
+            <div class="roads">
+                <h6>Helstu kennileiti</h6>
+                {% if '*' in row[0] %}
+                <p>{{row[0]|replace("* Ath. farið um fjallvegi (opnir hluta sumars) milli staða. Ekki fært fólksbílum. ", "")}}</p>
+                <p style="margin-top:10px;">* Ath. farið um fjallvegi (opnir hluta sumars) milli staða. Ekki fært fólksbílum.</p>
+                {%else%}
+                <p>{{row[0]}}</p>
+                {%endif%}
+            </div> -->
+
+			<!-- <div class="roads vegagerdin">
+			Sjá nánar á vef <a href="{{row[7]}}" target="_blank">Vegagerðarinnar</a>.
+			</div> -->
+
+			<div class="bonvoyage">
+			– Góða ferð! –
+			</div>
+
+             <!-- Social -->
+            <div class="roads share">
+                <div class="facebook"><a href="http://www.facebook.com/vegvisir.is" target="_blank">Facebook</a></div>
+                <div class="twitter"><a href="http://twitter.com/vegvisiriceland" target="_blank">Twitter</a></div>
+            </div>
+
+            <!-- <div class="share">
+                <div class="fb-like" data-href="http://www.vegvisir.is" data-send="true" data-layout="button_count" data-width="120" data-show-faces="false" data-font="lucida grande"></div>
+            </div> -->
+
+        </div>
+
+
+    </div>
+
+<!-- <div class="info">
+    <div class="social"><a href="http://www.facebook.com/vegvisir.is" target="_blank"><i class="icon-facebook-sign"></i></a></div>
+    <div class="social"><a href="http://twitter.com/vegvisiriceland" target="_blank"><i class="icon-twitter"></i></a></div>
+    <div class="photo-credit"><a href="http://www.marinothorlacius.com" target="_blank">Ljósmynd: Marinó Thorlacius</a></div>
+</div> -->
+
+
+<script src="svg-image-fallback.js"></script>
+<script>
+    $('.js-svgCheck').SVGImgFallback({
+            "location" : "/static/img/"
+    });
+</script>
+
+<script type="text/javascript">
+var source = [
+        {% for place in places %}{ id: {{ place[1] }}, name: '{{ place[0] }}' },{% endfor %}
+        ];
+     $('.from').typeahead({
+        source: source,
+        itemSelected: function(item, val, text){
+        $('#from_id').val(val);
+    }
+    });
+     $('.to').typeahead({
+        source: source,
+        itemSelected: function(item, val, text){
+        $('#to_id').val(val);
+    }
+    });
+
+$('input:text').focus(
+    function(){
+        $(this).val('');
+        $(this).attr("placeholder","");
+    });
+
+$('#from').on('focus', function() {
+    document.body.scrollTop = $(this).offset().top;
+});
+
+     function submitForm(){
+        var safe_from = $(route_select.from).val().latinise();
+        var safe_to = $(route_select.to).val().latinise();
+        if (safe_from == '' && safe_to == '') {
+            var rand1 = source[Math.floor(Math.random() * source.length)];
+            var rand2 = source[Math.floor(Math.random() * source.length)];
+            safe_from = rand1['name'].latinise();
+$('input[name=from_place]').val(rand1['name']);
+$('input[name=from_id]').val(rand1['id']);
+    safe_to = rand2['name'].latinise();
+$('input[name=to_place]').val(rand2['name']);
+$('input[name=to_id]').val(rand2['id']);
+    }
+
+    if (safe_to == '') {
+            var rand2 = source[Math.floor(Math.random() * source.length)];
+    safe_to = rand2['name'].latinise();
+$('input[name=to_place]').val(rand2['name']);
+$('input[name=to_id]').val(rand2['id']);
+    }
+        safe_from = safe_from.replace(/\s/g, "_");
+        safe_to = safe_to.replace(/\s/g, "_");
+    $("#route_select").attr("action",'/'+safe_from+'/'+safe_to);
+    $("#route_select").submit();
+}
+
+</script>
+
+
+				{% endfor %}
+
+				{% endblock %}
+
+
+

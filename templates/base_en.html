@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% block head %}
+    <title>Vegvísir{% block title %}{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="description" content="Vegvísir hjálpar þér að komast frá A til B. Sláðu inn brottfarar- og áfangastað og Vegvísir sýnir þér vegalengdina, áætlaðan ferðatíma og bensínkostnað auk leiðarlýsingar og tegund vega. Góða ferð!">
+    <meta name="keywords" content="Vegvísir, vegvísir.is, Vegvisir, vegvisir.is, Gunni Þorvalds, Palli Hilmars, vegalengd, vegalengdir, Ísland, Reykjavík-Akureyri, Reykjavík-Ísafjörður, Reykjavík-Egilsstaðir, Reykjavík-Patreksfjörður, Reykjavík, Akureyri, Egilsstaðir, Ísafjörður, Gullfoss, Geysir, Dettifoss, Langjökull, Ásbyrgi, Húsavík, Stykkishólmur, Seyðisfjörður, Bolungarvík, Selfoss, Keflavík, Grindavík, Borgarnes, Akranes, Höfn í Hornafirði">
+    <meta name="author" content="Gunnar Þorvaldsson & Páll Hilmarsson">
+    <META name="copyright" content="&copy; 2013 Gunnar Þorvaldsson & Páll Hilmarsson">
+    <meta charset="utf-8">
+    <meta property="og:title" content="Vegvísir"/>
+    <meta property="og:image" content="http://www.vegvisir.is/static/img/facebook_share_v1.jpg"/>
+    <meta property="og:site_name" content="Vegvísir"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="http://www.vegvisir.is"/>
+    <meta property="og:description" content="Vegvísir hjálpar þér að komast frá A til B. Sláðu inn brottfarar- og áfangastað og Vegvísir sýnir þér vegalengdina, áætlaðan ferðatíma og bensínkostnað auk leiðarlýsingar og tegund vega. Góða ferð!"/>
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="/static/css/vegvisirinn.css" rel="stylesheet">
+    <script type="text/javascript" src="//use.typekit.net/vdi6opu.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/static/img/favicon.ico" type="image/x-icon">
+    <!-- SUPPORT FOR IE6-8 OF HTML5 ELEMENTS -->
+    <!--[if lt IE 9]>
+          <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+      <![endif]-->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='ico/favicon.ico') }}">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <script src="/static/js/bootstrap-typeahead.min.js"></script>
+    <script src="/static/js/latinise.min.js"></script>
+
+    <link rel="stylesheet" href="/static/css/add2home.css">
+    <link rel="apple-touch-icon" href="/static/img/apple-touch-icon-precomposed.png"/>
+    <script type="text/javascript">
+    var addToHomeConfig = {
+      animationIn: 'bubble',
+      animationOut: 'fade',
+      lifespan:10000,
+      expire:60,
+      returningVisitor:true,
+      touchIcon:true,
+      message:'Styttu þér leið og fáðu <strong>Vegvísi</strong> á skjáborðið. Smelltu á `%icon` og svo á <strong>Add to Home Screen</strong>.'
+    };
+    </script>
+    <script type="application/javascript" src="/static/js/add2home.js"></script>
+    {% endblock %}
+  </head>
+
+  <body>
+
+    <div class="container page">
+        <div class="content">
+          {% block content %}
+          {% endblock %}
+        </div>
+    </div>
+    {% block js_footer %}
+    {% endblock %}
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-31101018-2', 'vegvisir.is');
+  ga('send', 'pageview');
+</script>
+
+
+
+  </body>
+</html>
