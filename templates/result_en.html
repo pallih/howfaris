@@ -16,7 +16,7 @@
 			<div>{% for row in rows %}
 
 
-			<a href="http://www.vegvisir.is"><div class="logo"></div></a>
+			<a href="http://www.vegvisir.is/en/"><div class="logo"></div></a>
 
             <form action="/" method="post" autocomplete="off" id ="route_select">
                 <input id="from_id" type="hidden" name="from_id" value="{{from_id}}">
@@ -51,13 +51,13 @@
                 <p class="vegalengd">{% if (row[4]|int()/85) > 1 %}
                 {%set busl_klst = (row[4]|int()/85)|round(0,'floor')|int%}
                 {%set busl_min = (((row[4]|int()/85) - ((row[4]|int()/85)|round(0, 'floor')))*60)|round|int%}
-                {{busl_klst}} klst. og {{busl_min}} mín.
+                {{busl_klst}} hours og {{busl_min}} minutes
                  </p>
 
                 {%else%}
                 {%set busl_min = ((row[4]|int()/85)*60)|round|int %}
                 {%set busl_klst = 0%}
-                {{busl_min}} mín.
+                {{busl_min}} minutes
                 {% endif %}
 
                 {% if (row[5]|int()/75) > 1 %}
@@ -65,14 +65,14 @@
                 {%set mol_min = (((row[5]|int()/75) - ((row[5]|int()/75)|round(0,'floor')))*60)|round|int%}
 
                 <p class="vegur">Gravel</p>
-                <p class="vegalengd">{{mol_klst}} klst. og {{mol_min}} mín.</p>
+                <p class="vegalengd">{{mol_klst}} hours and {{mol_min}} minutes</p>
                 {%else%}
                 {%set mol_min = ((row[5]|int()/75)*60)|round|int%}
                 {%set mol_klst = 0%}
 
                 {% if (mol_min > 0) or (mol_klst > 0)%}
                 <p class="vegur">Gravel</p>
-                <p class="vegalengd">{{mol_min}} mín.</p>
+                <p class="vegalengd">{{mol_min}} minutes</p>
                 {%endif%}
                 {% endif %}<p/>
 
@@ -85,61 +85,61 @@
                 {%set samtals_min = samtals_min - 60%}
                 {% endif %}
                 {% if samtals_klst >= 1%}
-                {{samtals_klst}} klst. og {{samtals_min}} mín.
+                {{samtals_klst}} hours and {{samtals_min}} minutes
                 {%else%}
-                {{samtals_min}} mín.</span></p>
+                {{samtals_min}} minutes</span></p>
                 {%endif%}
                 </div>
 
-                <p class="disclaimer"> Ferðatími miðast við 85 km. meðalhraða á bundnu slitlagi og 75 km. á malarvegi.</p>
+                <p class="disclaimer"> Travelling time assumes 85 km/h average speed on asphalt and 75 km/h on gravel.</p>
 
             </div>
 
             <!-- Kostnaður -->
             <div class="roads">
-                <h6>Kostnaður</h6>
+                <h6>Cost</h6>
                 {%set bensin_kostnadur_5 = ((row[1]|int / 20) * niutiuogfimm_okt_price|int)|int|thousand_seperator %}
                 {%set bensin_kostnadur_10 = ((row[1]|int / 10) * niutiuogfimm_okt_price|int)|int|thousand_seperator %}
                 {%set bensin_kostnadur_15 = ((row[1]|int / 6.6667) * niutiuogfimm_okt_price|int)|int|thousand_seperator %}
                 {%set disel_kostnadur_5 = ((row[1]|int / 20) * diesel_price|int)|int|thousand_seperator %}
                 {%set disel_kostnadur_10 = ((row[1]|int / 10) * diesel_price|int)|int|thousand_seperator %}
                 {%set disel_kostnadur_15 = ((row[1]|int / 6.6667) * diesel_price|int)|int|thousand_seperator %}
-                <p class="bill"><span>Bensín</span></p>
+                <p class="bill"><span>Gasoline</span></p>
                 <p class="vegur">– 5 l./100km.</p>
-                <p class="vegalengd"><span>{{bensin_kostnadur_5}} kr.</span></p>
+                <p class="vegalengd"><span>{{bensin_kostnadur_5}} ISK</span></p>
                 <p class="vegur">– 10 l./100km.</p>
-                <p class="vegalengd"><span>{{bensin_kostnadur_10}} kr.</span></p>
+                <p class="vegalengd"><span>{{bensin_kostnadur_10}} ISK</span></p>
                 <p class="vegur">– 15 l./100km.</p>
-                <p class="vegalengd"><span>{{bensin_kostnadur_15}} kr.</span></p>
-                <p class="bill"><span>Dísel</span></p>
+                <p class="vegalengd"><span>{{bensin_kostnadur_15}} ISK</span></p>
+                <p class="bill"><span>Diesel</span></p>
                 <p class="vegur">– 5 l./100km.</p>
-                <p class="vegalengd"><span>{{disel_kostnadur_5}} kr.</span></p>
+                <p class="vegalengd"><span>{{disel_kostnadur_5}} ISK</span></p>
                 <p class="vegur">– 10 l./100km.</p>
-                <p class="vegalengd"><span>{{disel_kostnadur_10}} kr.</span></p>
+                <p class="vegalengd"><span>{{disel_kostnadur_10}} ISK</span></p>
                 <p class="vegur">– 15 l./100km.</p>
-                <p class="vegalengd"><span>{{disel_kostnadur_15}} kr.</span></p>
-                <p class="disclaimer">Kostnaður miðast við {{niutiuogfimm_okt_price}} kr. fyrir bensínlítra og {{diesel_price}} kr. fyrir lítra af dísel. Verðin eru fengin frá <a href="http://gsmbensin.is/">GSM Bensín</a>.</p>
-                <p class="disclaimer">Ekki er gert ráð fyrir kostnaði við pylsur og kók.</p>
+                <p class="vegalengd"><span>{{disel_kostnadur_15}} ISK</span></p>
+                <p class="disclaimer">Cost assumes {{niutiuogfimm_okt_price}} ISK for a liter of gasoline and {{diesel_price}} ISK for a liter of diesel. Prices come from <a href="http://gsmbensin.is/">GSM Bensín</a>.</p>
+                <p class="disclaimer"></p>
             </div>
 
              <!-- Vegir -->
             <div class="roads">
-                <h6>Vegir</h6>
+                <h6>Roads</h6>
                 {% if row[5] == '0' %}
-                <p>Bundið slitlag alla leið! <p/>
+                <p>Asphalt all the way! <p/>
                 {% elif row[4] == '0' %}
-                <p>Möl alla leið! <p/>
+                <p>Gravel all the way! <p/>
                 {%else%}
 
-                <p class="vegur">Bundið slitlag</p> <p class="vegalengd"><span>{{row[4]}} km.</span></p>
-                <p  class="vegur">Malarvegur</p> <p class="vegalengd"><span>{{row[5]}} km.</span></p>
+                <p class="vegur">Asphalt</p> <p class="vegalengd"><span>{{row[4]}} km.</span></p>
+                <p  class="vegur">Gravel</p> <p class="vegalengd"><span>{{row[5]}} km.</span></p>
                 {% endif %}
             </div>
             <!-- Leiðarlýsing -->
 			<div class="roads">
-				<h6>Leiðarlýsing</h6>
+				<h6>Route</h6>
                 {% for vegur in vegir %}
-				<p class="vegur">{{vegur[0]|replace("null", "Ónefndur vegur")}}</p>
+				<p class="vegur">{{vegur[0]|replace("null", "Unnamed road")}}</p>
                 {% if vegur[1] == '_' %}
                 <p class="vegnumer"></p>
                 {%else%}
@@ -148,7 +148,7 @@
                 <p class="vegalengd"><span>{{vegur[2]}}</span> km.</p>
                 {%endfor%}
                 {% if '*' in row[0] %}
-                <p class="disclaimer">Ath. farið um fjallvegi (opnir hluta sumars) milli staða. Ekki fært fólksbílum.</p>
+                <p class="disclaimer">Note that this takes you on mountain roads that are usually only open part of the summer.</p>
                 {%endif%}
 
 
@@ -170,7 +170,7 @@
 			</div> -->
 
 			<div class="bonvoyage">
-			– Góða ferð! –
+			– Have a nice trip! –
 			</div>
 
              <!-- Social -->
