@@ -16,7 +16,7 @@
 			<div>{% for row in rows %}
 
 
-			<a href="http://www.vegvisir.is/en/"><div class="logo"></div></a>
+			<a href="http://www.vegvisir.is/en/"><div class="logo english"></div></a>
 
             <form action="/" method="post" autocomplete="off" id ="route_select">
                 <input id="from_id" type="hidden" name="from_id" value="{{from_id}}">
@@ -45,19 +45,19 @@
 
             <!-- Ferðatími -->
             <div class="roads">
-                <h6>Travelling time</h6>
+                <h6>Travelling Time</h6>
 
                 <p class="vegur">Asphalt</p>
                 <p class="vegalengd">{% if (row[4]|int()/85) > 1 %}
                 {%set busl_klst = (row[4]|int()/85)|round(0,'floor')|int%}
                 {%set busl_min = (((row[4]|int()/85) - ((row[4]|int()/85)|round(0, 'floor')))*60)|round|int%}
-                {{busl_klst}} hours og {{busl_min}} minutes
+                {{busl_klst}} hrs. and {{busl_min}} min.
                  </p>
 
                 {%else%}
                 {%set busl_min = ((row[4]|int()/85)*60)|round|int %}
                 {%set busl_klst = 0%}
-                {{busl_min}} minutes
+                {{busl_min}} min.
                 {% endif %}
 
                 {% if (row[5]|int()/75) > 1 %}
@@ -65,14 +65,14 @@
                 {%set mol_min = (((row[5]|int()/75) - ((row[5]|int()/75)|round(0,'floor')))*60)|round|int%}
 
                 <p class="vegur">Gravel</p>
-                <p class="vegalengd">{{mol_klst}} hours and {{mol_min}} minutes</p>
+                <p class="vegalengd">{{mol_klst}} hrs. and {{mol_min}} min.</p>
                 {%else%}
                 {%set mol_min = ((row[5]|int()/75)*60)|round|int%}
                 {%set mol_klst = 0%}
 
                 {% if (mol_min > 0) or (mol_klst > 0)%}
                 <p class="vegur">Gravel</p>
-                <p class="vegalengd">{{mol_min}} minutes</p>
+                <p class="vegalengd">{{mol_min}} min.</p>
                 {%endif%}
                 {% endif %}<p/>
 
@@ -85,19 +85,19 @@
                 {%set samtals_min = samtals_min - 60%}
                 {% endif %}
                 {% if samtals_klst >= 1%}
-                {{samtals_klst}} hours and {{samtals_min}} minutes
+                {{samtals_klst}} hrs. and {{samtals_min}} min.
                 {%else%}
-                {{samtals_min}} minutes</span></p>
+                {{samtals_min}} min.</span></p>
                 {%endif%}
                 </div>
 
-                <p class="disclaimer"> Travelling time assumes 85 km/h average speed on asphalt and 75 km/h on gravel.</p>
+                <p class="disclaimer"> Travelling time assumes 85 km/h (53 mph) average speed on asphalt and 75 km/h (47 mph) on gravel.</p>
 
             </div>
 
             <!-- Kostnaður -->
             <div class="roads">
-                <h6>Cost</h6>
+                <h6>Fuel Cost</h6>
                 {%set bensin_kostnadur_5 = ((row[1]|int / 20) * niutiuogfimm_okt_price|int)|int|thousand_seperator %}
                 {%set bensin_kostnadur_10 = ((row[1]|int / 10) * niutiuogfimm_okt_price|int)|int|thousand_seperator %}
                 {%set bensin_kostnadur_15 = ((row[1]|int / 6.6667) * niutiuogfimm_okt_price|int)|int|thousand_seperator %}
@@ -148,7 +148,7 @@
                 <p class="vegalengd"><span>{{vegur[2]}}</span> km.</p>
                 {%endfor%}
                 {% if '*' in row[0] %}
-                <p class="disclaimer">Note that this takes you on mountain roads that are usually only open part of the summer.</p>
+                <p class="disclaimer">Note that this takes you through mountain roads that are usually only open part of the summer.</p>
                 {%endif%}
 
 

@@ -79,6 +79,10 @@ a:hover {
 	margin: 14px 0 38px 0;
 }
 
+.logo .english {
+  	background: url(../img/vegvisir_logo_en.png) no-repeat center center;
+}
+
 h5 {
 	font-weight: 500;
 	font-size: 16px;
