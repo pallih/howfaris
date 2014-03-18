@@ -8,7 +8,7 @@ html, body {
 body,
 input,
 button 	{
-	-webkit-font-smoothing: antialiased; 
+	-webkit-font-smoothing: antialiased;
 }
 
 .background-image {
@@ -64,7 +64,7 @@ a {
 	-webkit-transition: color linear 0.4s;
 	   -moz-transition: color linear 0.4s;
 	     -o-transition: color linear 0.4s;
-	        transition: color linear 0.4s;	
+	        transition: color linear 0.4s;
 }
 
 a:hover {
@@ -79,8 +79,11 @@ a:hover {
 	margin: 14px 0 38px 0;
 }
 
-.logo .english {
+.logo_english {
   	background: url(../img/vegvisir_logo_en.png) no-repeat center center;
+  	background-size: 215px 79px;
+	height: 80px;
+	margin: 14px 0 38px 0;
 }
 
 h5 {
@@ -101,7 +104,7 @@ h5 {
 	-moz-box-shadow: 0;
 }
 
-.form-search, 
+.form-search,
 .form-results {
 	max-width: 260px;
 	min-width: 260px;
@@ -113,7 +116,7 @@ h5 {
 
 .input-block-level {
 	height: none;
-	
+
 }
 
 input {
@@ -154,7 +157,7 @@ input[type="color"],
 	-webkit-transition: border linear 0.4s, box-shadow linear 0.2s;
 	   -moz-transition: border linear 0.4s, box-shadow linear 0.2s;
 	     -o-transition: border linear 0.4s, box-shadow linear 0.2s;
-	        transition: border linear 0.4s, box-shadow linear 0.2s;	
+	        transition: border linear 0.4s, box-shadow linear 0.2s;
 }
 
 input[type="text"]:focus {
@@ -208,11 +211,11 @@ textarea::-webkit-input-placeholder {
 	background-image: none;
 	background-image: none;
 	background-repeat: none;
-	
+
 	-webkit-box-shadow: none;
 	   -moz-box-shadow: none;
 	        box-shadow: none;
-} 
+}
 
 .distance .btn {
 	float: left;
@@ -241,7 +244,7 @@ textarea::-webkit-input-placeholder {
 	background-image: none;
 	background-image: none;
 	background-repeat: none;
-	
+
 	-webkit-box-shadow: none;
 	   -moz-box-shadow: none;
 	        box-shadow: none;
@@ -279,7 +282,7 @@ textarea::-webkit-input-placeholder {
 	margin-bottom: 5px;
 }
 
-.distance { 
+.distance {
 	font-family: "museo-sans-rounded",sans-serif;
 	position: relative;
 	width: 58%;
@@ -450,7 +453,7 @@ textarea::-webkit-input-placeholder {
 
 
 @media all and (max-width: 480px) {
-	
+
 	body {
 		background-color: #EFEFEA;
 	}
@@ -462,7 +465,7 @@ textarea::-webkit-input-placeholder {
 	.pattern {
 		display: none;
 	}
-	
+
 	.form-search, .form-results {
 		max-width: 80%;
 		padding: 19px 0 0 0;
@@ -476,11 +479,11 @@ textarea::-webkit-input-placeholder {
 
 }
 
-@media print { 
+@media print {
 
 	body {
 		background-color: #fff;
-		
+
 	}
 
 	.background-image {
@@ -490,7 +493,7 @@ textarea::-webkit-input-placeholder {
 	.pattern {
 		display: none;
 	}
-	
+
 	.form-search, .form-results {
 		max-width: 50%;
 		padding: 19px 0 0 0;
@@ -501,5 +504,5 @@ textarea::-webkit-input-placeholder {
 	.info {
 		display: none;
 	}
-}	
+}
 
