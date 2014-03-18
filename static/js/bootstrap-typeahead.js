@@ -1,6 +1,6 @@
 ﻿//  ----------------------------------------------------------------------------
 //
-//  bootstrap-typeahead.js  
+//  bootstrap-typeahead.js
 //
 //  Twitter Bootstrap Typeahead Plugin
 //  v1.2.2
@@ -25,7 +25,7 @@
 //  Twitter Bootstrap 2.0+
 //
 //  ----------------------------------------------------------------------------
-
+// see: https://gist.github.com/ivancrneto/2978861 for additions
 !
 function ($) {
 
@@ -41,7 +41,7 @@ function ($) {
         this.$menu = $(this.options.menu).appendTo('body');
         this.shown = false;
 
-        // Method overrides    
+        // Method overrides
         this.eventSupported = this.options.eventSupported || this.eventSupported;
         this.grepper = this.options.grepper || this.grepper;
         this.highlighter = this.options.highlighter || this.highlighter;
@@ -50,8 +50,8 @@ function ($) {
         this.render = this.options.render || this.render;
         this.select = this.options.select || this.select;
         this.sorter = this.options.sorter || this.sorter;
-        this.source = this.options.source || this.source;        
-                
+        this.source = this.options.source || this.source;
+
         if (!this.source.length) {
             var ajax = this.options.ajax;
 
@@ -66,8 +66,30 @@ function ($) {
             }
         }
 
-        this.listen();        
+        this.listen();
     }
+
+    var makeSortString = (function() {
+    var translate_re = /[àáâãäåæçèéêëìíîïñòóôõöœùúûüýÿ]/g;
+    return function(s) {
+      var translate = {
+        'à': 'a', 'á': 'a', 'â': 'a', 'ã': 'a', 'ä': 'a', 'å': 'a',
+        'æ': 'ae',
+        'ç': 'c',
+        'è': 'e', 'é': 'e', 'ê': 'e', 'ë': 'e',
+        'ì': 'i', 'í': 'i', 'î': 'i', 'ï': 'i',
+        'ñ': 'n',
+        'ò': 'o', 'ó': 'o', 'ô': 'o', 'õ': 'o', 'ö': 'o',
+        'œ': 'oe',
+        'ù': 'u', 'ú': 'u', 'û': 'u', 'ü': 'u',
+        'ý': 'y', 'ÿ': 'y',
+        'þ': 'th',
+      };
+      return ( s.replace(translate_re, function(match) {
+        return translate[match];
+      }) );
+    }
+  })();
 
     Typeahead.prototype = {
 
@@ -84,7 +106,7 @@ function ($) {
         //  Check if an event is supported by the browser eg. 'keypress'
         //  * This was included to handle the "exhaustive deprecation" of jQuery.browser in jQuery 1.8
         //
-        eventSupported: function(eventName) {         
+        eventSupported: function(eventName) {
             var isSupported = (eventName in this.$element);
 
             if (!isSupported) {
@@ -103,16 +125,16 @@ function ($) {
 
         //------------------------------------------------------------------
         //
-        //  Handle AJAX source 
+        //  Handle AJAX source
         //
-        ajaxer: function () { 
+        ajaxer: function () {
             var that = this,
                 query = that.$element.val();
-            
+
             if (query === that.query) {
                 return that;
             }
-    
+
             // Query changed
             that.query = query;
 
@@ -121,7 +143,7 @@ function ($) {
                 clearTimeout(that.ajax.timerId);
                 that.ajax.timerId = null;
             }
-            
+
             if (!query || query.length < that.ajax.triggerLength) {
                 // Cancel the ajax callback if in progress
                 if (that.ajax.xhr) {
@@ -132,12 +154,12 @@ function ($) {
 
                 return that.shown ? that.hide() : that;
             }
-                    
+
             // Query is good to send, set a timer
             that.ajax.timerId = setTimeout(function() {
                 $.proxy(that.ajaxExecute(query), that)
             }, that.ajax.timeout);
-                    
+
             return that;
         },
 
@@ -147,27 +169,27 @@ function ($) {
         //
         ajaxExecute: function(query) {
             this.ajaxToggleLoadClass(true);
-            
+
             // Cancel last call if already in progress
             if (this.ajax.xhr) this.ajax.xhr.abort();
-            
+
             var params = this.ajax.preDispatch ? this.ajax.preDispatch(query) : { query : query };
             var jAjax = (this.ajax.method === "post") ? $.post : $.get;
             this.ajax.xhr = jAjax(this.ajax.url, params, $.proxy(this.ajaxLookup, this));
             this.ajax.timerId = null;
         },
-    
+
         //------------------------------------------------------------------
         //
         //  Perform a lookup in the AJAX results
         //
-        ajaxLookup: function (data) { 
+        ajaxLookup: function (data) {
             var items;
-            
+
             this.ajaxToggleLoadClass(false);
 
             if (!this.ajax.xhr) return;
-            
+
             if (this.ajax.preProcess) {
                 data = this.ajax.preProcess(data);
             }
@@ -176,7 +198,7 @@ function ($) {
             this.ajax.data = data;
 
             items = this.grepper(this.ajax.data);
-    
+
             if (!items || !items.length) {
                 return this.shown ? this.hide() : this;
             }
@@ -185,7 +207,7 @@ function ($) {
 
             return this.render(items.slice(0, this.options.items)).show();
         },
-        
+
         //------------------------------------------------------------------
         //
         //  Toggle the loading class
@@ -218,9 +240,9 @@ function ($) {
                 if (!that.query) {
                     return that.shown ? that.hide() : that;
                 }
-                
+
                 items = that.grepper(that.source);
-                
+
                 if (!items || !items.length) {
                     return that.shown ? that.hide() : that;
                 }
@@ -231,21 +253,21 @@ function ($) {
 
         //------------------------------------------------------------------
         //
-        //  Filters relevent results 
+        //  Filters relevent results
         //
         grepper: function(data) {
             var that = this,
                 items;
 
-            if (data && data.length && !data[0].hasOwnProperty(that.options.display)) {                
+            if (data && data.length && !data[0].hasOwnProperty(that.options.display)) {
                 return null;
-            } 
+            }
 
             items = $.grep(data, function (item) {
                 return that.matcher(item[that.options.display], item);
             });
 
-            return this.sorter(items);                
+            return this.sorter(items);
         },
 
         //------------------------------------------------------------------
@@ -253,7 +275,7 @@ function ($) {
         //  Looks for a match in the source
         //
         matcher: function (item) {
-            return ~item.toLowerCase().indexOf(this.query.toLowerCase());
+            return ~makeSortString(item.toLowerCase()).indexOf(makeSortString(this.query.toLowerCase()));
         },
 
         //------------------------------------------------------------------
@@ -280,7 +302,7 @@ function ($) {
             }
 
             return beginswith.concat(caseSensitive, caseInsensitive);
-        },       
+        },
 
         //=============================================================================================================
         //
@@ -317,7 +339,7 @@ function ($) {
             this.shown = false;
             return this;
         },
-        
+
         //------------------------------------------------------------------
         //
         //  Highlights the match(es) within the results
@@ -560,8 +582,8 @@ function ($) {
     //------------------------------------------------------------------
     //
     //  DOM-ready call for the Data API (no-JS implementation)
-    //    
-    //  Note: As of Bootstrap v2.0 this feature may be disabled using $('body').off('.data-api')    
+    //
+    //  Note: As of Bootstrap v2.0 this feature may be disabled using $('body').off('.data-api')
     //  More info here: https://github.com/twitter/bootstrap/tree/master/js
     //
     $(function () {
