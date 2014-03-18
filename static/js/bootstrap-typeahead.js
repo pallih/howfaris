@@ -70,7 +70,7 @@ function ($) {
     }
 
     var makeSortString = (function() {
-    var translate_re = /[àáâãäåæçèéêëìíîïñòóôõöœùúûüýÿ]/g;
+    var translate_re = /[àáâãäåæçèéêëìíîïñòóôõöœùúûüýÿþ]/g;
     return function(s) {
       var translate = {
         'à': 'a', 'á': 'a', 'â': 'a', 'ã': 'a', 'ä': 'a', 'å': 'a',
