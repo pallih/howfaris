@@ -17,8 +17,7 @@
                 <a href="http://www.vegvisir.is/en"><img src="../static/img/flag-UK.png"></a>
             </div>
 
-			<div>{% for row in rows %}
-
+			<div>
 
 			<a href="http://www.vegvisir.is"><div class="logo"></div></a>
 
@@ -40,12 +39,32 @@
 
             <input class="to input-block-level" type="text" name="to_place" placeholder="{{to_place}}" id ="to" autocomplete="off" value="{{to_place}}"/>
 
+            {% for row in rows %}
+            {% if rows|length > 1 %}
+            {% if loop.first == True %}
+            <div class="roads">
+            </br>
+                <h4>Stysta vegalengd</h4>
+            </div>
+                {% endif %}
+                {% endif %}
+
+
 
             <!-- Stysta vegalengd -->
             <div class="distance"><button type="submit" class="btn" class="btn" onclick="submitForm()"><img src="../static/img/reload.png" data-name="reload" alt="reload"></button>{{row[1]}}<span>km<span></div>
 
             </form>
 
+<!--             Helstu kennileiti-->
+            <div class="roads">
+                <h6>Helstu kennileiti</h6>
+                {% if '*' in row[0] %}
+                <p>{{row[0].split('*')[-1]}}</p>
+                {%else%}
+                <p>{{row[0]}}</p>
+                {%endif%}
+            </div>
 
             <!-- Ferðatími -->
             <div class="roads">
@@ -138,10 +157,12 @@
                 <p  class="vegur">Malarvegur</p> <p class="vegalengd"><span>{{row[5]}} km.</span></p>
                 {% endif %}
             </div>
+
+
             <!-- Leiðarlýsing -->
 			<div class="roads">
 				<h6>Leiðarlýsing</h6>
-                {% for vegur in vegir %}
+                {% for vegur in vegir[loop.index0] %}
 				<p class="vegur">{{vegur[0]|replace("null", "Ónefndur vegur")}}</p>
                 {% if vegur[1] == '_' %}
                 <p class="vegnumer"></p>
@@ -150,27 +171,26 @@
                 {%endif%}
                 <p class="vegalengd"><span>{{vegur[2]}}</span> km.</p>
                 {%endfor%}
-                {% if '*' in row[0] %}
+                {% if 'fjallveg' in row[0] %}
                 <p class="disclaimer">Athugið að farið er um fjallvegi sem aðeins eru opnir hluta úr sumri. Nánari upplýsingar fást hjá <a href="http://www.vegagerdin.is/" target="_blank">Vegagerðinni</a> í síma 1777.</p>
                 {%endif%}
+                </div>
+            </div>
+        </div>
+            <div class="well form-results">
+                <!-- Aðrar vegalengdir -->
 
-
-
-            <!-- Helstu kennileiti
-			</div>
+                {% if loop.length > 1 %}
+                {% if loop.index == 1 %}
             <div class="roads">
-                <h6>Helstu kennileiti</h6>
-                {% if '*' in row[0] %}
-                <p>{{row[0]|replace("* Ath. farið um fjallvegi (opnir hluta sumars) milli staða. Ekki fært fólksbílum. ", "")}}</p>
-                <p style="margin-top:10px;">* Ath. farið um fjallvegi (opnir hluta sumars) milli staða. Ekki fært fólksbílum.</p>
-                {%else%}
-                <p>{{row[0]}}</p>
-                {%endif%}
-            </div> -->
+            </br>
+                <h4>Aðrar vegalengdir</h4>
+            </div>
+                {% endif %}
+                {% endif %}
 
-			<!-- <div class="roads vegagerdin">
-			Sjá nánar á vef <a href="{{row[7]}}" target="_blank">Vegagerðarinnar</a>.
-			</div> -->
+            {% if loop.last == True %}
+
 
 			<div class="bonvoyage">
 			– Góða ferð! –
@@ -190,7 +210,7 @@
 
 
     </div>
-
+{% endif %}
 <!-- <div class="info">
     <div class="social"><a href="http://www.facebook.com/vegvisir.is" target="_blank"><i class="icon-facebook-sign"></i></a></div>
     <div class="social"><a href="http://twitter.com/vegvisiriceland" target="_blank"><i class="icon-twitter"></i></a></div>
