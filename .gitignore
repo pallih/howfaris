@@ -41,3 +41,4 @@ nosetests.xml
 index.py
 __init__.py
 __init__.pyc
+__init__-multiple.py
